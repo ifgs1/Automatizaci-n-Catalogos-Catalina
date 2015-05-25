@@ -21,11 +21,11 @@
     [[UINavigationBar appearance] setBarTintColor:[self colorWithHexString:@"#DAA536"]];
     
     //all labels properties
-    [[UILabel appearance] setFont:[UIFont fontWithName:@"Helvetica" size:13]];
+    [[UILabel appearance] setFont:[UIFont fontWithName:@"Helvetica" size:20]];
     [[UILabel appearance] setTextColor:[self colorWithHexString:@"#3F51B5"]];
 
     //all tableview properties
-    [[UITableViewCell appearance] setFont:[UIFont fontWithName:@"Helvetica" size:13]];
+    [[UITableViewCell appearance] setFont:[UIFont fontWithName:@"Helvetica" size:20]];
     [[UITableViewCell appearance] setTextColor:[self colorWithHexString:@"#3F51B5"]];
 
     
