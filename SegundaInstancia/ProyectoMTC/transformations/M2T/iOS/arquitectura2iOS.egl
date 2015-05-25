@@ -1,28 +1,28 @@
 [%
 	var t:Template:= TemplateFactory.load('AppDelegate2.egl');
-	t.generate('Catalogo/Catalogo/AppDelegate.m');
+	t.generate('Catalogo/AppDelegate.m');
 %] 
 [%
 	var t1:Template:= TemplateFactory.load('Category.egl');
-	t1.generate('Catalogo/Catalogo/Category.h');
+	t1.generate('Catalogo/Category.h');
 %] 
 [%
 	var t2:Template:= TemplateFactory.load('CategoriesViewControllerTableViewController2.egl');
-	t2.generate('Catalogo/Catalogo/CategoriesViewControllerTableViewController.m');
+	t2.generate('Catalogo/CategoriesViewControllerTableViewController.m');
 %] 
 [%
 	var t3:Template:= TemplateFactory.load('Product.egl');
-	t3.generate('Catalogo/Catalogo/Product.h');
+	t3.generate('Catalogo/Product.h');
 %] 
 [%
 	var t4:Template:= TemplateFactory.load('ProductsTableViewController2.egl');
-	t4.generate('Catalogo/Catalogo/ProductsTableViewController.m');
+	t4.generate('Catalogo/ProductsTableViewController.m');
 %] 
 [%
 	var t4:Template:= TemplateFactory.load('ProductsTableViewController2.egl');
-	t4.generate('Catalogo/Catalogo/ProductsTableViewController.m');
+	t4.generate('Catalogo/ProductsTableViewController.m');
 %] 
 [%
 	var t5:Template:= TemplateFactory.load('DescriptionViewController.egl');
-	t5.generate('Catalogo/Catalogo/DescriptionViewController.m');
+	t5.generate('Catalogo/DescriptionViewController.m');
 %] 
