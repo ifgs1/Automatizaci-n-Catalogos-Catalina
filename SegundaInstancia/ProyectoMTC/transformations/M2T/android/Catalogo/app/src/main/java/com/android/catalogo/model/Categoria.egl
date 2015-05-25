@@ -83,9 +83,7 @@ public class [%=entidadCategoria.nombre%] implements Serializable{
             
             [%
 		for(atributo in entidadCategoria.atributos) { %]
-			[% if(atributo.nombre <> "id") {%]
 		    	[%=atributo.tipoDato%] categoria_[%=atributo.nombre%] = jsonObjectCategoria.get[%=atributo.tipoDato%]([%=entidadCategoria.nombre.asString().toUpperCase()%]_[%=atributo.nombre.asString().toUpperCase()%]);
-			[%}%]
 		[%}%]
 
             List<[%=entidadProducto.nombre%]> productoList = new ArrayList<>();
