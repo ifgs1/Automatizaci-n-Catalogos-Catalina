@@ -20,8 +20,8 @@ import java.text.DecimalFormatSymbols;
  */
 public class Utilities {
 
-    public static final Typeface TYPEFACE = Typeface.defaultFromStyle(Typeface.ITALIC);
-    private static final String COLOR_LETRA = "#3F51B5";
+    public static final Typeface TYPEFACE = Typeface.defaultFromStyle(Typeface.NORMAL);
+    private static final String COLOR_LETRA = "#DAA536";
 
     public static final int GROUPING_SIZE = 3;
     public static final char COLOMBIA_GROUPING_SEPARATOR = '.';

@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="ASCII"?>
 <arquitectura:RootSistema xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:arquitectura="http://www.example.org/arquitectura">
   <presentaciones>
-    <vistas colorFondo="#DAA536" titulo="Categorias">
-      <letra color="#3F51B5" fuente="Typeface.ITALIC" tamano="12sp"/>
+    <vistas colorFondo="#3F51B5" titulo="Categorias">
+      <letra color="#DAA536" fuente="Typeface.NORMAL" tamano="12sp"/>
     </vistas>
-    <vistas colorFondo="#DAA536" titulo="Productos">
-      <letra color="#3F51B5" fuente="Typeface.ITALIC" tamano="12sp"/>
+    <vistas colorFondo="#3F51B5" titulo="Productos">
+      <letra color="#DAA536" fuente="Typeface.NORMAL" tamano="12sp"/>
     </vistas>
-    <vistas colorFondo="#DAA536" titulo="Detalle del Producto">
-      <letra color="#3F51B5" fuente="Typeface.ITALIC" tamano="12sp"/>
+    <vistas colorFondo="#3F51B5" titulo="Detalle del Producto">
+      <letra color="#DAA536" fuente="Typeface.NORMAL" tamano="12sp"/>
     </vistas>
-    <vistas colorFondo="#DAA536" titulo="Contactanos">
-      <letra color="#3F51B5" fuente="Typeface.ITALIC" tamano="12sp"/>
+    <vistas colorFondo="#3F51B5" titulo="Contactanos">
+      <letra color="#DAA536" fuente="Typeface.NORMAL" tamano="12sp"/>
     </vistas>
-    <vistas colorFondo="#DAA536" titulo="Acerca de">
-      <letra color="#3F51B5" fuente="Typeface.ITALIC" tamano="12sp"/>
+    <vistas colorFondo="#3F51B5" titulo="Acerca de">
+      <letra color="#DAA536" fuente="Typeface.NORMAL" tamano="12sp"/>
     </vistas>
     <controladores nombre="MainActivity"/>
     <controladores nombre="FragmentCategorias"/>

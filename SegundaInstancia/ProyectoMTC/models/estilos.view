@@ -2,11 +2,11 @@ RootSistema
 {
 	vistas {  
 		Vista {
-			colorFondo '#DAA536'
+			colorFondo '#3F51B5'
 			tecnologia android
 			letra Letra {
-				colorLetra '#3F51B5' 
-				fuente 'Typeface.ITALIC'
+				colorLetra '#DAA536'
+				fuente 'Typeface.NORMAL'
 				tamano small
 			}
 		}
