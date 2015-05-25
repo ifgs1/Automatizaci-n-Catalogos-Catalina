@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="ASCII"?>
 <arquitectura:RootSistema xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:arquitectura="http://www.example.org/arquitectura">
   <presentaciones barraBusqueda="true">
-    <vistas colorFondo="#3F51B5" titulo="Categorias">
-      <letra color="#DAA536" fuente="Typeface.NORMAL" tamano="12sp"/>
+    <vistas colorFondo="#DAA536" titulo="Categorias">
+      <letra color="#3F51B5" fuente="Typeface.NORMAL" tamano="20sp"/>
     </vistas>
-    <vistas colorFondo="#3F51B5" titulo="Productos">
-      <letra color="#DAA536" fuente="Typeface.NORMAL" tamano="12sp"/>
+    <vistas colorFondo="#DAA536" titulo="Productos">
+      <letra color="#3F51B5" fuente="Typeface.NORMAL" tamano="20sp"/>
     </vistas>
-    <vistas colorFondo="#3F51B5" titulo="Detalle del Producto">
-      <letra color="#DAA536" fuente="Typeface.NORMAL" tamano="12sp"/>
+    <vistas colorFondo="#DAA536" titulo="Detalle del Producto">
+      <letra color="#3F51B5" fuente="Typeface.NORMAL" tamano="20sp"/>
     </vistas>
-    <vistas colorFondo="#3F51B5" titulo="Contactanos">
-      <letra color="#DAA536" fuente="Typeface.NORMAL" tamano="12sp"/>
+    <vistas colorFondo="#DAA536" titulo="Contactanos">
+      <letra color="#3F51B5" fuente="Typeface.NORMAL" tamano="20sp"/>
     </vistas>
-    <vistas colorFondo="#3F51B5" titulo="Acerca de">
-      <letra color="#DAA536" fuente="Typeface.NORMAL" tamano="12sp"/>
+    <vistas colorFondo="#DAA536" titulo="Acerca de">
+      <letra color="#3F51B5" fuente="Typeface.NORMAL" tamano="20sp"/>
     </vistas>
     <controladores nombre="MainActivity"/>
     <controladores nombre="FragmentCategorias"/>
@@ -44,23 +44,24 @@
       <atributos nombre="nombre" tipoDato="String"/>
       <atributos nombre="precio" tipoDato="Double"/>
       <atributos nombre="imagen" tipoDato="String"/>
+      <atributos nombre="promocion" tipoDato="String"/>
     </entidades>
   </presentaciones>
   <presentaciones tecnologia="iOS" barraBusqueda="true">
-    <vistas colorFondo="DAA536" titulo="Categorias">
-      <letra color="3F51B5" fuente="Helvetica" tamano="13"/>
+    <vistas colorFondo="3F51B5" titulo="Categorias">
+      <letra color="DAA536" fuente="Helvetica" tamano="13"/>
     </vistas>
-    <vistas colorFondo="DAA536" titulo="Productos">
-      <letra color="3F51B5" fuente="Helvetica" tamano="13"/>
+    <vistas colorFondo="3F51B5" titulo="Productos">
+      <letra color="DAA536" fuente="Helvetica" tamano="13"/>
     </vistas>
-    <vistas colorFondo="DAA536" titulo="Detalle del Producto">
-      <letra color="3F51B5" fuente="Helvetica" tamano="13"/>
+    <vistas colorFondo="3F51B5" titulo="Detalle del Producto">
+      <letra color="DAA536" fuente="Helvetica" tamano="13"/>
     </vistas>
-    <vistas colorFondo="DAA536" titulo="Contactanos">
-      <letra color="3F51B5" fuente="Helvetica" tamano="13"/>
+    <vistas colorFondo="3F51B5" titulo="Contactanos">
+      <letra color="DAA536" fuente="Helvetica" tamano="13"/>
     </vistas>
-    <vistas colorFondo="DAA536" titulo="Acerca de">
-      <letra color="3F51B5" fuente="Helvetica" tamano="13"/>
+    <vistas colorFondo="3F51B5" titulo="Acerca de">
+      <letra color="DAA536" fuente="Helvetica" tamano="13"/>
     </vistas>
     <controladores nombre="ViewController"/>
     <controladores nombre="CategoriasViewController"/>
@@ -90,6 +91,7 @@
       <atributos nombre="nombre" tipoDato="String"/>
       <atributos nombre="precio" tipoDato="Double"/>
       <atributos nombre="imagen" tipoDato="String"/>
+      <atributos nombre="promocion" tipoDato="String"/>
     </entidades>
   </presentaciones>
   <presentaciones tecnologia="web" barraBusqueda="true">
@@ -131,6 +133,7 @@
       <atributos nombre="nombre" tipoDato="String"/>
       <atributos nombre="precio" tipoDato="Double"/>
       <atributos nombre="imagen" tipoDato="String"/>
+      <atributos nombre="promocion" tipoDato="String"/>
     </entidades>
   </presentaciones>
   <capaLogicaNegocio>
@@ -164,6 +167,7 @@
       <atributos nombre="nombre" tipoDato="String"/>
       <atributos nombre="precio" tipoDato="Double"/>
       <atributos nombre="imagen" tipoDato="String"/>
+      <atributos nombre="promocion" tipoDato="String"/>
     </jsonsDTO>
     <mappers nombre="EmpresaJsonMapper">
       <metodos tipoRetorno="EmpresaJson" argumentos="Empresa e"/>
@@ -231,14 +235,18 @@
       <atributos nombre="nombre" tipoDato="String"/>
       <atributos nombre="precio" tipoDato="Double"/>
       <atributos nombre="imagen" tipoDato="String"/>
+      <atributos nombre="promocion" tipoDato="String"/>
     </entidades>
     <inserts table="Empresa (id,nombre,direccion,email,telefono,descripcion,urlImagen,catalogo_id)" values="1,'Carulla','Cra 85 # 15 -56','carulla@gmail.com','4567897','Supermercado Mayorista','http://www.revistalabarra.com.co/guia/files/logo/3222.jpg',1"/>
     <inserts table="Catalogo (id,nombre)" values="1,'Catalogo de Productos'"/>
     <inserts table="Categoria (id,nombre,catalogo_id)" values="1,'Comidas',1"/>
-    <inserts table="Producto (id,nombre,precio,imagen,categoria_id)" values="1,'Jamon Pietran',12000,'http://www.elgranjamon.es/noticias/wp-content/uploads/2010/04/jamon-cocido.jpg',1"/>
-    <inserts table="Producto (id,nombre,precio,imagen,categoria_id)" values="2,'Queso Mozarella',8000,'http://www.ar.all.biz/img/ar/catalog/21620.jpeg',1"/>
+    <inserts table="Producto (id,nombre,precio,imagen,promocion,categoria_id)" values="1,'Jamon Pietran',12000,'http://www.elgranjamon.es/noticias/wp-content/uploads/2010/04/jamon-cocido.jpg','30%',1"/>
+    <inserts table="Producto (id,nombre,precio,imagen,promocion,categoria_id)" values="2,'Queso Mozarella',8000,'http://www.ar.all.biz/img/ar/catalog/21620.jpeg','40%',1"/>
     <inserts table="Categoria (id,nombre,catalogo_id)" values="2,'Bebidas',1"/>
-    <inserts table="Producto (id,nombre,precio,imagen,categoria_id)" values="3,'Jugo de Naranja',6500,'http://www.dietapaleo.org/wp-content/uploads/2013/03/jugo-de-naranja.jpg',2"/>
-    <inserts table="Producto (id,nombre,precio,imagen,categoria_id)" values="4,'Pepsi',4000,'http://www.oberholtzer-creative.com/visualculture/wp-content/uploads/2009/01/pepsi_can.jpg',2"/>
+    <inserts table="Producto (id,nombre,precio,imagen,promocion,categoria_id)" values="3,'Jugo de Naranja',6500,'http://www.dietapaleo.org/wp-content/uploads/2013/03/jugo-de-naranja.jpg','30%',2"/>
+    <inserts table="Producto (id,nombre,precio,imagen,promocion,categoria_id)" values="4,'Pepsi',4000,'http://www.oberholtzer-creative.com/visualculture/wp-content/uploads/2009/01/pepsi_can.jpg','70%',2"/>
+    <inserts table="Categoria (id,nombre,catalogo_id)" values="3,'Ropa',1"/>
+    <inserts table="Producto (id,nombre,precio,imagen,promocion,categoria_id)" values="5,'Ropa Vieja',6500,'http://paleomg.com/wp-content/uploads/2012/04/ropa-vieja3-300x225.jpg','25%',3"/>
+    <inserts table="Producto (id,nombre,precio,imagen,promocion,categoria_id)" values="6,'Adidas Gorra',4000,'http://images.nike.com/is/image/emea/PDP_HERO/Nike-FC-Block-True-Hat-648344_010_A.jpg','30%',3"/>
   </capaPersistencia>
 </arquitectura:RootSistema>

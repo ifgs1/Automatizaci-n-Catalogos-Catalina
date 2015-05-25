@@ -15,4 +15,6 @@
  
   @property (nonatomic, retain) NSString * imagen;
  
+  @property (nonatomic, retain) NSString * promocion;
+ 
 @end

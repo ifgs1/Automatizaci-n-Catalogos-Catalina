@@ -53,6 +53,10 @@ public class ProductoDetalleDialogo {
 	    TextView textViewprecio = (TextView) view.findViewById(R.id.Producto_TextView_Detalle_precio);
         textViewprecio.setText(Utilities.doubleToMoneyFormat(producto.getprecio()));
         		    
+			
+		TextView textViewpromocion = (TextView) view.findViewById(R.id.Producto_TextView_Detalle_promocion);
+        textViewpromocion.setText(producto.getpromocion());
+        Utilities.cargarLetra(activity,textViewpromocion);	
 
 				
         final ImageView imageViewProducto = (ImageView) view.findViewById(R.id.Producto_Detalle_ImageView);

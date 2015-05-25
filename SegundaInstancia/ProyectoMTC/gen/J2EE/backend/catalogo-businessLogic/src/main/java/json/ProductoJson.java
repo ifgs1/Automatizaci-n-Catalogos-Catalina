@@ -48,5 +48,13 @@ public class ProductoJson{
 		public void setImagen(String imagen){
 		this.imagen = imagen;
 		}
+		private String promocion;
+	
+		public String getPromocion(){
+			return promocion;
+		}
+		public void setPromocion(String promocion){
+		this.promocion = promocion;
+		}
 
 }

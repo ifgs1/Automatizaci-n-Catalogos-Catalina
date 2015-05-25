@@ -33,6 +33,13 @@ RootSistema {
 									valorAtributo 'http://www.elgranjamon.es/noticias/wp-content/uploads/2010/04/jamon-cocido.jpg' 
 									tipoDato 'String' 
 								}
+								,
+								Atributo { 
+									idAtributo 3 
+									nombreAtributo 'promocion' 
+									valorAtributo '30%' 
+									tipoDato 'String' 
+								}
 							}
 						}
 						,
@@ -41,16 +48,23 @@ RootSistema {
 							nombre "Queso Mozarella" 
 							atributos { 
 								Atributo { 
-									idAtributo 3 
+									idAtributo 4 
 									nombreAtributo 'precio' 
 									valorAtributo '8000' 
 									tipoDato 'Double' 
 								}
 								,
 								Atributo { 
-									idAtributo 4 
+									idAtributo 5 
 									nombreAtributo 'imagen' 
 									valorAtributo 'http://www.ar.all.biz/img/ar/catalog/21620.jpeg' 
+									tipoDato 'String' 
+								}
+								,
+								Atributo { 
+									idAtributo 6 
+									nombreAtributo 'promocion' 
+									valorAtributo '40%' 
 									tipoDato 'String' 
 								}
 							}
@@ -66,16 +80,23 @@ RootSistema {
 							nombre "Jugo de Naranja" 
 							atributos { 
 								Atributo { 
-									idAtributo 5 
+									idAtributo 7 
 									nombreAtributo 'precio' 
 									valorAtributo '6500' 
 									tipoDato 'Double' 
 								}
 								,
 								Atributo { 
-									idAtributo 6 
+									idAtributo 8 
 									nombreAtributo 'imagen' 
 									valorAtributo 'http://www.dietapaleo.org/wp-content/uploads/2013/03/jugo-de-naranja.jpg' 
+									tipoDato 'String' 
+								}
+								,
+								Atributo { 
+									idAtributo 9 
+									nombreAtributo 'promocion' 
+									valorAtributo '30%' 
 									tipoDato 'String' 
 								}
 							}
@@ -86,16 +107,82 @@ RootSistema {
 							nombre "Pepsi" 
 							atributos { 
 								Atributo { 
-									idAtributo 7 
+									idAtributo 10 
 									nombreAtributo 'precio' 
 									valorAtributo '4000' 
 									tipoDato 'Double' 
 								}
 								,
 								Atributo { 
-									idAtributo 8 
+									idAtributo 11 
 									nombreAtributo 'imagen' 
 									valorAtributo 'http://www.oberholtzer-creative.com/visualculture/wp-content/uploads/2009/01/pepsi_can.jpg' 
+									tipoDato 'String' 
+								}
+								,
+								Atributo { 
+									idAtributo 12 
+									nombreAtributo 'promocion' 
+									valorAtributo '70%' 
+									tipoDato 'String' 
+								}
+							}
+						}
+					}
+				},
+				Categoria {
+					idCategoria 3 
+					nombre Ropa 
+					productos {
+						Producto {
+							idProducto 5 
+							nombre "Ropa Vieja" 
+							atributos { 
+								Atributo { 
+									idAtributo 13
+									nombreAtributo 'precio' 
+									valorAtributo '6500' 
+									tipoDato 'Double' 
+								}
+								,
+								Atributo { 
+									idAtributo 14 
+									nombreAtributo 'imagen' 
+									valorAtributo 'http://paleomg.com/wp-content/uploads/2012/04/ropa-vieja3-300x225.jpg' 
+									tipoDato 'String' 
+								}
+								,
+								Atributo { 
+									idAtributo 15 
+									nombreAtributo 'promocion' 
+									valorAtributo '25%' 
+									tipoDato 'String' 
+								}
+							}
+						}
+						,
+						Producto {
+							idProducto 6 
+							nombre "Adidas Gorra" 
+							atributos { 
+								Atributo { 
+									idAtributo 16 
+									nombreAtributo 'precio' 
+									valorAtributo '4000' 
+									tipoDato 'Double' 
+								}
+								,
+								Atributo { 
+									idAtributo 17 
+									nombreAtributo 'imagen' 
+									valorAtributo 'http://images.nike.com/is/image/emea/PDP_HERO/Nike-FC-Block-True-Hat-648344_010_A.jpg' 
+									tipoDato 'String' 
+								}
+								,
+								Atributo { 
+									idAtributo 18 
+									nombreAtributo 'promocion' 
+									valorAtributo '30%' 
 									tipoDato 'String' 
 								}
 							}

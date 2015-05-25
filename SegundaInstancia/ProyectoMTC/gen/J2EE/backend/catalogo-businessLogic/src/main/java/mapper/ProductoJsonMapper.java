@@ -24,6 +24,7 @@ public class ProductoJsonMapper {
 			productoJson.setNombre(p.getNombre());
 			productoJson.setPrecio(p.getPrecio());
 			productoJson.setImagen(p.getImagen());
+			productoJson.setPromocion(p.getPromocion());
 		return productoJson;
 		}
 	

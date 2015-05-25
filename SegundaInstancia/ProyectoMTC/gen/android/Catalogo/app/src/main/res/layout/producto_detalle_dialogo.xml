@@ -42,6 +42,15 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/producto_precio" />
             
+		
+		<TextView
+            android:id="@+id/Producto_TextView_Detalle_promocion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:gravity="center"
+            android:text="@string/producto_nombre" />
+			
 
     </LinearLayout>
 </LinearLayout>

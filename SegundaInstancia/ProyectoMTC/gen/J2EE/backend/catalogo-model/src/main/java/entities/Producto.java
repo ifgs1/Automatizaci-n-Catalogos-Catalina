@@ -70,6 +70,17 @@ public class Producto implements Serializable{
 		this.imagen = imagen;
 	}
 	  	
+	
+	private String promocion;
+	
+	public String getPromocion(){
+		return promocion;
+	}
+	
+	public void setPromocion(String promocion){
+		this.promocion = promocion;
+	}
+	  	
 	@ManyToOne(fetch=FetchType.EAGER)
 	private Categoria categoria;
 	
