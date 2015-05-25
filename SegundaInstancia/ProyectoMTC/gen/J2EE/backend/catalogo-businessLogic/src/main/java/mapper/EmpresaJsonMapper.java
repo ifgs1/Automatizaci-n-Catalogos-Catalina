@@ -18,6 +18,7 @@ import json.ProductoJson;
 public class EmpresaJsonMapper {
 		public static EmpresaJson convertToEmpresaJson(Empresa e){
 			EmpresaJson empresaJson = new EmpresaJson();
+			empresaJson.setId(e.getId()); 
 			
 			empresaJson.setCatalogoId(e.getCatalogo().getId());
 			empresaJson.setNombre(e.getNombre());

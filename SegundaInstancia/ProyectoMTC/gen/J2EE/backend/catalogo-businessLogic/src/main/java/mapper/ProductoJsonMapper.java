@@ -18,6 +18,7 @@ import json.ProductoJson;
 public class ProductoJsonMapper {
 		public static ProductoJson convertToProductoJson(Producto p){
 			ProductoJson productoJson = new ProductoJson();
+			productoJson.setId(p.getId()); 
 			
 			productoJson.setCategoriaId(p.getCategoria().getId());
 			productoJson.setNombre(p.getNombre());

@@ -18,6 +18,7 @@ import json.ProductoJson;
 public class CatalogoJsonMapper {
 		public static CatalogoJson convertToCatalogoJson(Catalogo c){
 			CatalogoJson catalogoJson = new CatalogoJson();
+			catalogoJson.setId(c.getId()); 
 			
 			List<CategoriaJson> categorias = new ArrayList<CategoriaJson>();
 			for(Categoria c1:c.getCategorias()){
