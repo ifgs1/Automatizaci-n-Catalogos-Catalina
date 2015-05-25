@@ -38,6 +38,10 @@ public class ProductosFragment extends Fragment implements SearchView.OnQueryTex
         setHasOptionsMenu(true);
     }
     
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_productos, menu);
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

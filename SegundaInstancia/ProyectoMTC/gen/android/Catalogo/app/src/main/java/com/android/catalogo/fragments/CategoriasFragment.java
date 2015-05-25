@@ -43,6 +43,10 @@ public class CategoriasFragment extends Fragment implements SearchView.OnQueryTe
         setHasOptionsMenu(true);
     }
     
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_categorias, menu);
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

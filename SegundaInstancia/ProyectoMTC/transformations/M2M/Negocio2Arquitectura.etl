@@ -679,14 +679,15 @@ operation estilos!RootSistema getCapaPersistencia() : arquitectura!CapaPersisten
 						 				
 	var empresa = catalogoRoot.empresa;
 	var insertEmpresa = new arquitectura!Insert;
-	insertEmpresa.table = 'Empresa (id,nombre,direccion,email,telefono,descripcion,urlImagen)';
+	insertEmpresa.table = 'Empresa (id,nombre,direccion,email,telefono,descripcion,urlImagen,catalogo_id)';
 	insertEmpresa.values = "1,'"
 	                      +empresa.nombre+"','"
 	                      +empresa.direccion+"','"
 	                      +empresa.email+"','"
 	                      +empresa.telefono+"','"
 	                      +empresa.descripcion+"','"
-	                      +empresa.urlImagen+"'";
+	                      +empresa.urlImagen+"',"
+	                      +"1";
 
 	capaPersistencia.inserts = capaPersistencia.inserts.including(insertEmpresa);
 	

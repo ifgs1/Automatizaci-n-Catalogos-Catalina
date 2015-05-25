@@ -1,6 +1,7 @@
 RootSistema
 {
-	vistas {  
+	vistas {
+		barraBusqueda  
 		Vista {
 			colorFondo '#3F51B5'
 			tecnologia android
@@ -18,7 +19,7 @@ RootSistema
 			letra Letra {
 				colorLetra '3F51B5'
 				fuente 'Helvetica'
-				tamano large
+				tamano small
 			}
 		}
 		,
