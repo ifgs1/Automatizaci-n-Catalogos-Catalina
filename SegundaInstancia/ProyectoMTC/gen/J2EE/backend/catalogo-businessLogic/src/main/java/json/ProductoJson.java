@@ -32,12 +32,12 @@ public class ProductoJson{
 		public void setNombre(String nombre){
 		this.nombre = nombre;
 		}
-		private double precio;
+		private Double precio;
 	
-		public double getPrecio(){
+		public Double getPrecio(){
 			return precio;
 		}
-		public void setPrecio(double precio){
+		public void setPrecio(Double precio){
 		this.precio = precio;
 		}
 		private String imagen;

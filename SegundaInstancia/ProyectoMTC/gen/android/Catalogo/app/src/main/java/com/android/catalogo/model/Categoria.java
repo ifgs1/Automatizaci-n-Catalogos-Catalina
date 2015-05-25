@@ -73,8 +73,7 @@ public class Categoria implements Serializable{
         for(int i = 0; i<jsonArrayCategorias.length();i++){
             JSONObject jsonObjectCategoria = jsonArrayCategorias.getJSONObject(i);
             
-		    Long categoria_id = jsonObjectCategoria.getLong(CATEGORIA_ID);
-		    String categoria_nombre = jsonObjectCategoria.getString(CATEGORIA_NOMBRE);
+		    	String categoria_nombre = jsonObjectCategoria.getString(CATEGORIA_NOMBRE);
 
             List<Producto> productoList = new ArrayList<>();
             JSONArray jsonArrayProductos =  jsonObjectCategoria.getJSONArray(PRODUCTOS);

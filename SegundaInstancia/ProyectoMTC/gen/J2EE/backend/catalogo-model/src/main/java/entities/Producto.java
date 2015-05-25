@@ -49,13 +49,13 @@ public class Producto implements Serializable{
 	}
 	  	
 	
-	private double precio;
+	private Double precio;
 	
-	public double getPrecio(){
+	public Double getPrecio(){
 		return precio;
 	}
 	
-	public void setPrecio(double precio){
+	public void setPrecio(Double precio){
 		this.precio = precio;
 	}
 	  	
