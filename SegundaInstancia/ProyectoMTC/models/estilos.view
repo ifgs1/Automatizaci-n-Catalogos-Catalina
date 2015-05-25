@@ -8,7 +8,7 @@ RootSistema
 			letra Letra {
 				colorLetra '#3F51B5'
 				fuente 'Typeface.NORMAL'
-				tamano medium
+				tamano small
 			}
 		}
 		,

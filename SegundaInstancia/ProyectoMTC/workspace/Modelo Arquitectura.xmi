@@ -2,19 +2,19 @@
 <arquitectura:RootSistema xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:arquitectura="http://www.example.org/arquitectura">
   <presentaciones barraBusqueda="true">
     <vistas colorFondo="#FF8800" titulo="Categorias">
-      <letra color="#3F51B5" fuente="Typeface.NORMAL" tamano="20sp"/>
+      <letra color="#3F51B5" fuente="Typeface.NORMAL" tamano="12sp"/>
     </vistas>
     <vistas colorFondo="#FF8800" titulo="Productos">
-      <letra color="#3F51B5" fuente="Typeface.NORMAL" tamano="20sp"/>
+      <letra color="#3F51B5" fuente="Typeface.NORMAL" tamano="12sp"/>
     </vistas>
     <vistas colorFondo="#FF8800" titulo="Detalle del Producto">
-      <letra color="#3F51B5" fuente="Typeface.NORMAL" tamano="20sp"/>
+      <letra color="#3F51B5" fuente="Typeface.NORMAL" tamano="12sp"/>
     </vistas>
     <vistas colorFondo="#FF8800" titulo="Contactanos">
-      <letra color="#3F51B5" fuente="Typeface.NORMAL" tamano="20sp"/>
+      <letra color="#3F51B5" fuente="Typeface.NORMAL" tamano="12sp"/>
     </vistas>
     <vistas colorFondo="#FF8800" titulo="Acerca de">
-      <letra color="#3F51B5" fuente="Typeface.NORMAL" tamano="20sp"/>
+      <letra color="#3F51B5" fuente="Typeface.NORMAL" tamano="12sp"/>
     </vistas>
     <controladores nombre="MainActivity"/>
     <controladores nombre="FragmentCategorias"/>

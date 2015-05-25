@@ -74,9 +74,9 @@ operation estilos!Letra estiloLetraToArquitecturaLetra(capa : arquitectura!CapaP
 		if(self.tamano = estilos!TamanoLetra#small){
 			letra.tamano = '12sp';	
 		}else if(self.tamano = estilos!TamanoLetra#medium){
-			letra.tamano = '20sp';
+			letra.tamano = '18sp';
 		}else if(self.tamano = estilos!TamanoLetra#large){
-			letra.tamano = '28sp';
+			letra.tamano = '26sp';
 		}
  		
  	}else if(capa.tecnologia = arquitectura!Tecnologia#iOS){
