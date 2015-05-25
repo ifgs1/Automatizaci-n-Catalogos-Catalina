@@ -1,0 +1,164 @@
+[%   
+	//PRESENTACION
+	var capaPresentacion : arquitectura!CapaPresentacion := arquitectura!CapaPresentacion.all.select(a | a.tecnologia=arquitectura!Tecnologia#web).at(0).println();
+	
+	// Color fondo
+	capaPresentacion.vistas.at(0).colorFondo.println();
+
+	// Fuente
+	capaPresentacion.vistas.at(0).letra.fuente.println();
+	
+	// Tamano
+	capaPresentacion.vistas.at(0).letra.tamano.println();
+	
+	// Color letra
+	capaPresentacion.vistas.at(0).letra.color.println();
+	
+	//EMPRESA
+	var entidadEmpresa = capaPresentacion.entidades.select(e | e.nombre='Empresa').at(0).println();
+	
+	for(atributo in entidadEmpresa.atributos) {
+		atributo.nombre.println();
+	}
+	
+	//CATEGORIAS
+	var entidadCategoria = capaPresentacion.entidades.select(e | e.nombre='Categoria').at(0).println();
+	
+	for(atributo in entidadCategoria.atributos) {
+		atributo.nombre.println();
+	}
+	
+	//PRODUCTOS
+	var entidadProducto = capaPresentacion.entidades.select(e | e.nombre='Producto').at(0).println();
+	
+	for(atributo in entidadProducto.atributos) {
+		atributo.nombre.println();
+	}
+	
+ %]
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Contact</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/estilo.css" rel="stylesheet">
+
+    <script>
+      function myFunction() {
+
+        //Empresa
+        var json = httpGet('http://uniandes-msls.rhcloud.com/catalogo-service/rest/services/empresa'),
+          arr = JSON.parse(json);
+          console.log(arr[0].nombre);
+          console.log(arr[0].descripcion);
+          console.log(arr[0].direccion);
+          console.log(arr[0].telefono);
+          console.log(arr[0].email);
+          console.log(arr[0].urlImagen);
+          
+          //Empresa->
+
+          document.getElementById("company_info").innerHTML = ("<h1>Contacto</h1>" +
+                                                                "<img src=" + arr[0].urlImagen + " alt='...''>" +
+                                                                "<p><strong>Dirección:</strong> " + arr[0].direccion + "</p>" +
+                                                                "<p><strong>Email:</strong> " + arr[0].email + "</p>" +
+                                                                "<p><strong>Teléfono:</strong> " + arr[0].telefono + "</p>");
+
+
+          document.getElementById("home_button").innerHTML = arr[0].nombre;
+          document.getElementById("catalog_footer").innerHTML = "&copy; "  + arr[0].nombre + " 2015";
+      }
+
+      function httpGet(theUrl)
+      {
+          var xmlHttp = new XMLHttpRequest();
+          xmlHttp.open( "GET", theUrl, false );
+          xmlHttp.send( null );
+          return xmlHttp.responseText;
+      }
+
+      </script>
+
+      <style>
+       .navbar {
+      		background-color: [%= capaPresentacion.vistas.at(0).colorFondo %];
+      	}
+      	
+      	.jumbotron h1 {
+      		font-family: '[%= capaPresentacion.vistas.at(0).letra.fuente %]';
+      		color: [%= capaPresentacion.vistas.at(0).letra.color%];
+      	}
+      	
+      	h3 {
+      		font-family: '[%= capaPresentacion.vistas.at(0).letra.fuente %]';
+      		font-size: [%=capaPresentacion.vistas.at(0).letra.tamano%];
+      		color: [%= capaPresentacion.vistas.at(0).letra.color%];
+      	}
+      </style>
+
+  </head>
+
+  <body onload="myFunction()">
+    <nav class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html" id="home_button"> </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">A cerca de</a></li>
+            <li class="active"><a href="#">Contacto</a></li>
+          </ul>
+        </div><!-- /.nav-collapse -->
+      </div><!-- /.container -->
+    </nav><!-- /.navbar -->
+
+    <div class="container">
+
+      <div class="row row-offcanvas row-offcanvas-right">
+
+        <div class="col-xs-12 col-sm-9">
+          <div class="jumbotron" id="company_info">
+            
+          </div>
+        </div><!--/.col-xs-12.col-sm-9-->
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <p id="catalog_footer"> </p>
+      </footer>
+
+    </div><!--/.container-->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/logica.js"></script>
+  </body>
+</html>
+
+ 

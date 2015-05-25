@@ -95,20 +95,20 @@
     </entidades>
   </presentaciones>
   <presentaciones tecnologia="web" barraBusqueda="true">
-    <vistas colorFondo="#414141" titulo="Categorias">
-      <letra color="#FF0000" fuente="Helvetica Neue" tamano="18px"/>
+    <vistas colorFondo="#DAA536" titulo="Categorias">
+      <letra color="#3F51B5" fuente="Helvetica Neue" tamano="18px"/>
     </vistas>
-    <vistas colorFondo="#414141" titulo="Productos">
-      <letra color="#FF0000" fuente="Helvetica Neue" tamano="18px"/>
+    <vistas colorFondo="#DAA536" titulo="Productos">
+      <letra color="#3F51B5" fuente="Helvetica Neue" tamano="18px"/>
     </vistas>
-    <vistas colorFondo="#414141" titulo="Detalle del Producto">
-      <letra color="#FF0000" fuente="Helvetica Neue" tamano="18px"/>
+    <vistas colorFondo="#DAA536" titulo="Detalle del Producto">
+      <letra color="#3F51B5" fuente="Helvetica Neue" tamano="18px"/>
     </vistas>
-    <vistas colorFondo="#414141" titulo="Contactanos">
-      <letra color="#FF0000" fuente="Helvetica Neue" tamano="18px"/>
+    <vistas colorFondo="#DAA536" titulo="Contactanos">
+      <letra color="#3F51B5" fuente="Helvetica Neue" tamano="18px"/>
     </vistas>
-    <vistas colorFondo="#414141" titulo="Acerca de">
-      <letra color="#FF0000" fuente="Helvetica Neue" tamano="18px"/>
+    <vistas colorFondo="#DAA536" titulo="Acerca de">
+      <letra color="#3F51B5" fuente="Helvetica Neue" tamano="18px"/>
     </vistas>
     <controladores nombre="logica.js"/>
     <comunicacionesHttp url="/empresa" nombre="XmlHttpRequest"/>

@@ -25,10 +25,10 @@ RootSistema
 		,
 		barraBusqueda
 		Vista {
-			colorFondo '#414141'
+			colorFondo '#DAA536'
 			tecnologia web
 			letra Letra {
-				colorLetra '#FF0000' 
+				colorLetra '#3F51B5' 
 				fuente 'Helvetica Neue'
 				tamano medium
 			}

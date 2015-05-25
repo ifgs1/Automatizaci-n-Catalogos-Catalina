@@ -1,0 +1,234 @@
+[%   
+	//PRESENTACION
+	var capaPresentacion : arquitectura!CapaPresentacion := arquitectura!CapaPresentacion.all.select(a | a.tecnologia=arquitectura!Tecnologia#web).at(0).println();
+	
+	// Color fondo
+	capaPresentacion.vistas.at(0).colorFondo.println();
+
+	// Fuente
+	capaPresentacion.vistas.at(0).letra.fuente.println();
+	
+	// Tamano
+	capaPresentacion.vistas.at(0).letra.tamano.println();
+	
+	// Color letra
+	capaPresentacion.vistas.at(0).letra.color.println();
+	
+	//EMPRESA
+	var entidadEmpresa = capaPresentacion.entidades.select(e | e.nombre='Empresa').at(0).println();
+	
+	for(atributo in entidadEmpresa.atributos) {
+		atributo.nombre.println();
+	}
+	
+	//CATEGORIAS
+	var entidadCategoria = capaPresentacion.entidades.select(e | e.nombre='Categoria').at(0).println();
+	
+	for(atributo in entidadCategoria.atributos) {
+		atributo.nombre.println();
+	}
+	
+	//PRODUCTOS
+	var entidadProducto = capaPresentacion.entidades.select(e | e.nombre='Producto').at(0).println();
+	
+	for(atributo in entidadProducto.atributos) {
+		atributo.nombre.println();
+	}
+	
+ %]
+ 
+ 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Index</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/estilo.css" rel="stylesheet">
+    
+    <!-- JS dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootbox.min.js"></script>
+
+    <script>
+    	
+      var jsonTotal;
+    
+      function myFunction() {
+
+        //Empresa
+        var json = httpGet('http://uniandes-msls.rhcloud.com/catalogo-service/rest/services/empresa'),
+          arr = JSON.parse(json);
+          console.log(arr[0].nombre);
+          console.log(arr[0].descripcion);
+          console.log(arr[0].direccion);
+          console.log(arr[0].telefono);
+          console.log(arr[0].email);
+          console.log(arr[0].urlImagen);
+          
+          //Empresa->
+
+          document.getElementById("home_button").innerHTML = arr[0].nombre;
+          document.getElementById("catalog_footer").innerHTML = "&copy; "  + arr[0].nombre + " 2015";
+
+          //Catalogo
+          var catalogo = httpGet('http://uniandes-msls.rhcloud.com/catalogo-service/rest/services/catalogo'),
+          array = JSON.parse(catalogo);
+          
+          jsonTotal = JSON.parse(catalogo);
+
+          //Catalogo->
+          document.getElementById("catalog_title").innerHTML = array[0].nombre;
+          document.getElementById("catalog_subtitle").innerHTML = array[0].descripcion;
+
+          //Categories
+          var categories = "<a href='#' class='list-group-item active'>Todos los productos</a>";
+          var products = "";
+
+          for(var categoria in array[0].categorias) {
+            categories += ("<a href='#' class='list-group-item'>" + array[0].categorias[categoria].nombre + "</a>" );
+
+            for(var producto in array[0].categorias[categoria].productos) {
+                products += ("<div class='col-sm-6 col-md-3'>" +
+                                "<div class='thumbnail'>" +
+                                  "<img src=" + array[0].categorias[categoria].productos[producto].imagen + " alt='...'>" +
+                                  "<div class='caption'>" +
+                                    "<h3>" + array[0].categorias[categoria].productos[producto].nombre + "</h3>" +
+                                    "<h3 class='panel-title'>Precio:</h3>" +
+                                    "<p>$" + array[0].categorias[categoria].productos[producto].precio + "</p>" +
+                                    "<p><a class='btn btn-default' onclick='myOtherFunction(" + array[0].categorias[categoria].productos[producto].id + ")' role='button'>Ver detalles &raquo;</a></p>" +
+                                  "</div>" +
+                                "</div>" +
+                              "</div>");
+            }
+          }
+          document.getElementById("catalog_categories").innerHTML = categories;
+
+          //Products
+          
+          document.getElementById("catalog_products").innerHTML = products;
+
+      }
+
+      function httpGet(theUrl)
+      {
+          var xmlHttp = new XMLHttpRequest();
+          xmlHttp.open( "GET", theUrl, false );
+          xmlHttp.send( null );
+          return xmlHttp.responseText;
+      }
+      
+      function myOtherFunction(productId) {
+          /*
+          bootbox.alert("Hello world!" + productId, function() {
+              console.log("Alert Callback");
+          });*/
+
+          for(var categoria in jsonTotal[0].categorias) {
+            for(var producto in jsonTotal[0].categorias[categoria].productos) {
+              if(jsonTotal[0].categorias[categoria].productos[producto].id == productId) {
+                console.log("Nombre: " + jsonTotal[0].categorias[categoria].productos[producto].nombre);
+
+                bootbox.dialog({
+                  title: jsonTotal[0].categorias[categoria].productos[producto].nombre,
+                  message: "<img src=" + jsonTotal[0].categorias[categoria].productos[producto].imagen + " width='280px' height='400px' alt='...'/><br/>"
+                  [% for(atributo in entidadProducto.atributos) { %]
+						+ "<b>[%=atributo.nombre%]: </b>" + jsonTotal[0].categorias[categoria].productos[producto].[%=atributo.nombre%] + " <br/>"
+				  [%}%]
+                });
+
+                break;
+              }
+              
+            }
+          }
+      }
+
+      </script>
+      
+      <style>
+      	.navbar {
+      		background-color: [%= capaPresentacion.vistas.at(0).colorFondo %];
+      	}
+      	h3 {
+      		font-family: '[%= capaPresentacion.vistas.at(0).letra.fuente %]';
+      		font-size: [%=capaPresentacion.vistas.at(0).letra.tamano%];
+      		color: [%= capaPresentacion.vistas.at(0).letra.color%];
+      	}
+      </style>
+
+  </head>
+
+  <body onload="myFunction()">
+    <nav class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#" id="home_button"> </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="about.html">Acerca de</a></li>
+            <li><a href="contact.html">Contacto</a></li>
+          </ul>
+        </div><!-- /.nav-collapse -->
+      </div><!-- /.container -->
+    </nav><!-- /.navbar -->
+
+    <div class="container">
+
+      <div class="row row-offcanvas row-offcanvas-right">
+
+        <div class="col-xs-12 col-sm-9">
+          <p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+          </p>
+          <div class="jumbotron">
+            <h1 id="catalog_title"> </h1>
+            <p id="catalog_subtitle"> </p>
+          </div>
+          <div class="row" id="catalog_products">
+            
+          </div><!--/row-->
+        </div><!--/.col-xs-12.col-sm-9-->
+
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+          <div class="list-group" id="catalog_categories">
+            
+          </div>
+        </div><!--/.sidebar-offcanvas-->
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <p id="catalog_footer"> </p>
+      </footer>
+
+    </div><!--/.container-->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/logica.js"></script>
+  </body>
+</html>
+ 

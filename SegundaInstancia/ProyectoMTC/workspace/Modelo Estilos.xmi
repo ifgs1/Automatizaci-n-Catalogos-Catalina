@@ -6,7 +6,7 @@
   <vistas colorFondo="3F51B5" barraBusqueda="true" tecnologia="iOS">
     <letra colorLetra="DAA536" fuente="Helvetica"/>
   </vistas>
-  <vistas colorFondo="#414141" barraBusqueda="true" tecnologia="web">
-    <letra colorLetra="#FF0000" fuente="Helvetica Neue" tamano="medium"/>
+  <vistas colorFondo="#DAA536" barraBusqueda="true" tecnologia="web">
+    <letra colorLetra="#3F51B5" fuente="Helvetica Neue" tamano="medium"/>
   </vistas>
 </estilos:RootSistema>

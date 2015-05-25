@@ -1,4 +1,10 @@
 [% 
 	var t:Template:= TemplateFactory.load('index.egl');
 	t.generate('index.html');
+	
+	var t2:Template:= TemplateFactory.load('contact.egl');
+	t2.generate('contact.html');
+	
+	var t3:Template:= TemplateFactory.load('about.egl');
+	t3.generate('about.html');
 %]
