@@ -1,0 +1,108 @@
+[%   
+	//PRESENTACION
+	var capaPresentacion : arquitectura!CapaPresentacion := arquitectura!CapaPresentacion.all.select(a | a.tecnologia=arquitectura!Tecnologia#android).at(0);		
+	
+	//CATEGORIA
+	var entidadCategoria = capaPresentacion.entidades.select(e | e.nombre='Categoria').at(0);
+	
+	//PRODUCTO
+	var entidadProducto = capaPresentacion.entidades.select(e | e.nombre='Producto').at(0);
+ %]
+package com.android.catalogo.model;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Categoría del catálogo de la empresa
+ */
+public class [%=entidadCategoria.nombre%] implements Serializable{
+
+	private static final String CATEGORIAS = "categorias";
+    private static final String PRODUCTOS = "productos";
+    
+[%
+	for(atributo in entidadProducto.atributos) { %]
+	private static final String [%=entidadProducto.nombre.asString().toUpperCase()%]_[%=atributo.nombre.asString().toUpperCase()%] = "[%=atributo.nombre%]";
+	
+	[%}%]
+
+[%
+	for(atributo in entidadCategoria.atributos) { %]
+	private static final String [%=entidadCategoria.nombre.asString().toUpperCase()%]_[%=atributo.nombre.asString().toUpperCase()%] = "[%=atributo.nombre%]";
+	
+	[%}%]
+	
+	private List<[%=entidadProducto.nombre%]> productoList = new ArrayList<>();
+	
+[%
+	for(atributo in entidadCategoria.atributos) { %]
+	private [%=atributo.tipoDato%] [%=atributo.nombre%];
+	[%}%]
+
+    public [%=entidadCategoria.nombre%](List<Producto> productoList,[%for(atributo in entidadCategoria.atributos) { %] [%=atributo.tipoDato%] [%=atributo.nombre%] [%if(atributo <> entidadCategoria.atributos.last){%] , [%}%][%}%]) {
+		this.productoList = productoList;
+	[%
+	for(atributo in entidadCategoria.atributos) { %]
+		this.[%=atributo.nombre%] = [%=atributo.nombre%];
+	[%}%]
+    }
+
+	public List<Producto> getProductoList() {
+        return productoList;
+    }
+
+    public void setProductoList(List<Producto> productoList) {
+        this.productoList = productoList;
+    }
+
+	[%
+	for(atributo in entidadCategoria.atributos) { %]
+	
+	public [%=atributo.tipoDato%] get[%=atributo.nombre%]() {
+        return [%=atributo.nombre%];
+    }
+    
+    public void set[%=atributo.nombre%]([%=atributo.tipoDato%] [%=atributo.nombre%]) {
+        this.[%=atributo.nombre%] = [%=atributo.nombre%];
+    }
+		
+	[%}%]
+
+    public static List<[%=entidadCategoria.nombre%]> jsonToCatalogo(JSONObject jsonObject) throws Exception{
+
+        List<[%=entidadCategoria.nombre%]> catalogo = new ArrayList<>();
+
+        JSONArray jsonArrayCategorias = jsonObject.getJSONArray(CATEGORIAS);
+        for(int i = 0; i<jsonArrayCategorias.length();i++){
+            JSONObject jsonObjectCategoria = jsonArrayCategorias.getJSONObject(i);
+            
+            [%
+		for(atributo in entidadCategoria.atributos) { %]
+		    [%=atributo.tipoDato%] categoria_[%=atributo.nombre%] = jsonObjectCategoria.get[%=atributo.tipoDato%]([%=entidadCategoria.nombre.asString().toUpperCase()%]_[%=atributo.nombre.asString().toUpperCase()%]);
+		[%}%]
+
+            List<[%=entidadProducto.nombre%]> productoList = new ArrayList<>();
+            JSONArray jsonArrayProductos =  jsonObjectCategoria.getJSONArray(PRODUCTOS);
+            for(int j = 0; j<jsonArrayProductos.length();j++){
+                JSONObject jsonObjectProducto = jsonArrayProductos.getJSONObject(j);
+                
+                [%
+			for(atributo in entidadProducto.atributos) { %]
+				[%=atributo.tipoDato%] producto_[%=atributo.nombre%] =  jsonObjectProducto.get[%=atributo.tipoDato%]([%=entidadProducto.nombre.asString().toUpperCase()%]_[%=atributo.nombre.asString().toUpperCase()%]);
+			[%}%]
+			
+                productoList.add(new [%=entidadProducto.nombre%]([%for(atributo in entidadProducto.atributos) { %] producto_[%=atributo.nombre%] [%if(atributo <> entidadProducto.atributos.last){%] , [%}%][%}%]));
+
+            }
+            Categoria categoria = new [%=entidadCategoria.nombre%](productoList,[%for(atributo in entidadCategoria.atributos) { %] categoria_[%=atributo.nombre%] [%if(atributo <> entidadCategoria.atributos.last){%] , [%}%][%}%]);
+            catalogo.add(categoria);
+        }
+
+        return catalogo;
+    }
+}

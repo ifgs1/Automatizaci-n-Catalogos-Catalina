@@ -1,0 +1,66 @@
+[%   
+	//PRESENTACION
+	var capaPresentacion : arquitectura!CapaPresentacion := arquitectura!CapaPresentacion.all.select(a | a.tecnologia=arquitectura!Tecnologia#android).at(0);		
+	
+	//EMPRESA
+	var entidadEmpresa = capaPresentacion.entidades.select(e | e.nombre='Empresa').at(0);
+ %]
+ 
+package com.android.catalogo.model;
+
+import org.json.JSONObject;
+
+import java.io.Serializable;
+
+/**
+ * Empresa que ofrece el catálogo
+ */
+public class [%=entidadEmpresa.nombre%] implements Serializable {
+
+[%
+	for(atributo in entidadEmpresa.atributos) { %]
+	private static final String [%=atributo.nombre.asString().toUpperCase()%] = "[%=atributo.nombre%]";
+	
+	[%}%]
+[%
+	for(atributo in entidadEmpresa.atributos) { %]
+	private [%=atributo.tipoDato%] [%=atributo.nombre%];
+	[%}%]
+
+    public [%=entidadEmpresa.nombre%]([%for(atributo in entidadEmpresa.atributos) { %] [%=atributo.tipoDato%] [%=atributo.nombre%] [%if(atributo <> entidadEmpresa.atributos.last){%] , [%}%][%}%]) {
+	[%
+	for(atributo in entidadEmpresa.atributos) { %]
+		this.[%=atributo.nombre%] = [%=atributo.nombre%];
+	[%}%]
+    }
+
+	[%
+	for(atributo in entidadEmpresa.atributos) { %]
+	
+	public [%=atributo.tipoDato%] get[%=atributo.nombre%]() {
+        return [%=atributo.nombre%];
+    }
+    
+    public void set[%=atributo.nombre%]([%=atributo.tipoDato%] [%=atributo.nombre%]) {
+        this.[%=atributo.nombre%] = [%=atributo.nombre%];
+    }
+		
+	[%}%]	
+	
+	public static [%=entidadEmpresa.nombre%] jsonTo[%=entidadEmpresa.nombre%](JSONObject jsonObject) throws Exception{
+	[%
+	for(atributo in entidadEmpresa.atributos) { %]
+		[%=atributo.tipoDato%] [%=atributo.nombre%] = "";
+	[%}%]
+	
+	[%
+	for(atributo in entidadEmpresa.atributos) { %]
+		if (jsonObject.has([%=atributo.nombre.asString().toUpperCase()%]) && jsonObject.get([%=atributo.nombre.asString().toUpperCase()%]) != JSONObject.NULL) {
+            [%=atributo.nombre%] = jsonObject.get[%=atributo.tipoDato%]([%=atributo.nombre.asString().toUpperCase()%]);
+        }
+	[%}%]
+
+        return new [%=entidadEmpresa.nombre%]([%for(atributo in entidadEmpresa.atributos) { %] [%=atributo.nombre%] [%if(atributo <> entidadEmpresa.atributos.last){%] , [%}%][%}%]);
+    }
+	
+} 

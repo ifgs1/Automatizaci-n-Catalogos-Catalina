@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ASCII"?>
+<catalogo:RootSistema xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:catalogo="http://www.example.org/catalogo">
+  <empresa nombre="Carulla" direccion="Cra 85 # 15 -56" email="carulla@gmail.com" telefono="4567897" descripcion="Supermercado Mayorista" urlImagen="url">
+    <catalogo idCatalogo="1" nombre="Catalogo de Productos">
+      <categorias idCategoria="1" nombre="Comida">
+        <productos idProducto="1" nombre="Jamon Pietran">
+          <atributos idAtributo="1" nombreAtributo="precio" valorAtributo="12000" tipoDato="double"/>
+          <atributos idAtributo="2" nombreAtributo="imagen" valorAtributo="url" tipoDato="String"/>
+        </productos>
+        <productos idProducto="2" nombre="Queso Mozarella Alpina">
+          <atributos idAtributo="1" nombreAtributo="precio" valorAtributo="10000" tipoDato="double"/>
+          <atributos nombreAtributo="imagen" valorAtributo="url" tipoDato="String"/>
+        </productos>
+      </categorias>
+      <categorias idCategoria="2" nombre="Bebidas">
+        <productos idProducto="3" nombre="Vino Gato Pardo">
+          <atributos idAtributo="1" nombreAtributo="precio" valorAtributo="80000" tipoDato="double"/>
+          <atributos idAtributo="4" nombreAtributo="imagen" valorAtributo="url" tipoDato="String"/>
+        </productos>
+        <productos idProducto="4" nombre="Pepsi">
+          <atributos idAtributo="6" nombreAtributo="precio" valorAtributo="4000" tipoDato="double"/>
+          <atributos idAtributo="8" nombreAtributo="imagen" valorAtributo="url" tipoDato="String"/>
+        </productos>
+      </categorias>
+    </catalogo>
+  </empresa>
+</catalogo:RootSistema>

@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Catalogo</string>
+
+    <string name="view_pager_categorias">Categorías</string>
+    <string name="view_pager_acerca_de">Acerca De</string>
+    <string name="view_pager_contactanos">Contáctanos</string>
+
+    <string name="acerca_de_descripcion">Descripción:</string>
+    <string name="acerca_de_direccion">Dirección:</string>
+    <string name="acerca_de_telefono">Teléfono:</string>
+    <string name="acerca_de_email">Email:</string>
+
+    <string name="producto_nombre">Nombre</string>
+    <string name="producto_precio">$ 5.500</string>
+
+    <string name="menu_search">Buscar</string>
+
+    <string name="hint_search">Buscar&#8230;</string>
+
+    <string name="cargando">Cargando&#8230;</string>
+    <string name="server_error">Problemas de conexión con el servidor</string>
+    <string name="ok">OK</string>
+
+    <string name="fuenteLetra">Robotium</string>
+
+</resources>

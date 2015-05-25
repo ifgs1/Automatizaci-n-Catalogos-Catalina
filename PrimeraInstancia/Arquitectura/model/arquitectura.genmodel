@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/Arquitectura/src" modelPluginID="Arquitectura"
+    modelName="Arquitectura" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>arquitectura.ecore</foreignModel>
+  <genPackages prefix="Arquitectura" disposableProviderFactory="true" ecorePackage="arquitectura.ecore#/">
+    <genClasses ecoreClass="arquitectura.ecore#//RootSistema">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arquitectura.ecore#//RootSistema/presentaciones"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arquitectura.ecore#//RootSistema/capaLogicaNegocio"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arquitectura.ecore#//RootSistema/capaServicio"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arquitectura.ecore#//RootSistema/capaAccesoDatos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arquitectura.ecore#//RootSistema/capaPersistencia"/>
+    </genClasses>
+    <genClasses ecoreClass="arquitectura.ecore#//CapaPresentacion">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arquitectura.ecore#//CapaPresentacion/vistas"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arquitectura.ecore#//CapaPresentacion/controladores"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arquitectura.ecore#//CapaPresentacion/comunicacionesHttp"/>
+    </genClasses>
+    <genClasses ecoreClass="arquitectura.ecore#//CapaLogicaNegocio"/>
+    <genClasses ecoreClass="arquitectura.ecore#//CapaPersistencia"/>
+    <genClasses ecoreClass="arquitectura.ecore#//CapaServicio"/>
+    <genClasses ecoreClass="arquitectura.ecore#//CapaAccesoDatos"/>
+    <genClasses ecoreClass="arquitectura.ecore#//Vista"/>
+    <genClasses ecoreClass="arquitectura.ecore#//Controlador"/>
+    <genClasses ecoreClass="arquitectura.ecore#//ComunicacionHttp"/>
+    <genClasses ecoreClass="arquitectura.ecore#//Entidad"/>
+  </genPackages>
+</genmodel:GenModel>

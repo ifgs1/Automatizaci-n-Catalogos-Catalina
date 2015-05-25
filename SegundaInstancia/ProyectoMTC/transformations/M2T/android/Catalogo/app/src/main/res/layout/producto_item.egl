@@ -1,0 +1,78 @@
+[%   
+	//PRESENTACION
+	var capaPresentacion : arquitectura!CapaPresentacion := arquitectura!CapaPresentacion.all.select(a | a.tecnologia=arquitectura!Tecnologia#android).at(0);		
+	
+	//PRODUCTO
+	var entidadProducto = capaPresentacion.entidades.select(e | e.nombre='Producto').at(0);
+ %]
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_margin="@dimen/activity_horizontal_margin"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:gravity="center">
+
+[%
+	var existeImagen = false;
+	for(atributo in entidadProducto.atributos){
+		if(atributo.nombre.contains("imagen") or atributo.nombre.contains("urlImagen")){
+			existeImagen = true;
+		}
+	}
+
+
+%]
+[%if(existeImagen){%]
+		<ImageView
+            android:id="@+id/Producto_Item_ImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"
+            android:contentDescription="@string/app_name"/>
+[%}%]
+        
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+[%
+for(atributo in entidadProducto.atributos){
+		var esNombre = atributo.nombre.contains("nombre");
+		
+		if(esNombre){%]
+			
+		<TextView
+            android:id="@+id/Producto_TextView_Item_[%=atributo.nombre%]"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:gravity="center"
+            android:text="@string/producto_nombre" />
+			
+			[%
+			break;
+			}	
+	
+}
+%]
+
+      
+    </LinearLayout>
+
+
+</LinearLayout>

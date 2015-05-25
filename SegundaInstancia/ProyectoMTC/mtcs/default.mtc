@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.mtcflow.model:MTC xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.mtcflow.model="http://com.mtcflow.mtc/1.1">
+  <files name="estilos.view" URI="models/estilos.view"/>
+  <files name="catalogo.cat" URI="models/catalogo.cat"/>
+  <files name="HTML"/>
+  <files name="Android"/>
+  <files name="iOS"/>
+  <files name="J2EE"/>
+  <files name="SQL"/>
+  <metamodels name="Metamodelo Estilos" URI="estilos.ecore" alias="estilos"/>
+  <metamodels name="Metamodelo Catalogo" URI="catalogo.ecore" alias="catalogo"/>
+  <metamodels name="Metamodelo Arquitectura" URI="arquitectura.ecore" alias="arquitectura"/>
+  <models name="Modelo Estilos" metamodels="//@metamodels.0"/>
+  <models name="Modelo Catalogo" metamodels="//@metamodels.1"/>
+  <models name="Modelo Arquitectura" metamodels="//@metamodels.2"/>
+  <inputModels model="//@models.0" modelAlias="estilos" transformation="//@transformations.2"/>
+  <inputModels model="//@models.1" modelAlias="catalogo" transformation="//@transformations.2"/>
+  <inputModels model="//@models.2" modelAlias="arquitectura" transformation="//@transformations.3"/>
+  <inputModels model="//@models.2" modelAlias="arquitectura" transformation="//@transformations.4"/>
+  <inputModels model="//@models.2" modelAlias="arquitectura" transformation="//@transformations.5"/>
+  <inputModels model="//@models.2" modelAlias="arquitectura" transformation="//@transformations.6"/>
+  <inputModels model="//@models.2" modelAlias="arquitectura" transformation="//@transformations.7"/>
+  <transformations xsi:type="com.mtcflow.model:T2MTransformation" name="Gen Estilos XMI" URI="transformations/T2M/Estilos.xtext"/>
+  <transformations xsi:type="com.mtcflow.model:T2MTransformation" name="Gen Catalogo XMI" URI="transformations/T2M/Catalogo.xtext"/>
+  <transformations xsi:type="com.mtcflow.model:M2MTransformation" name="ETL Negocio2Arquitectura" URI="Negocio2Arquitectura.etl"/>
+  <transformations xsi:type="com.mtcflow.model:M2TTransformation" name="EGL Arquitectura2HTML" URI="html/arquitectura2HTML.egl" target="gen/html"/>
+  <transformations xsi:type="com.mtcflow.model:M2TTransformation" name="EGL Arquitectura2Android" URI="android/arquitectura2Android.egl" target="gen/android"/>
+  <transformations xsi:type="com.mtcflow.model:M2TTransformation" name="EGL Arquitectura2iOS" URI="iOS/arquitectura2iOS.egl" target="gen/iOS"/>
+  <transformations xsi:type="com.mtcflow.model:M2TTransformation" name="EGL Arquitectura2J2EE" URI="J2EE/arquitecturaJ2EE.egl" target="gen/J2EE"/>
+  <transformations xsi:type="com.mtcflow.model:M2TTransformation" name="EGL Arquitectura2SQL" URI="SQL/arquitectura2SQL.egl" target="gen/SQL"/>
+  <outputModels modelAlias="estilos.view" model="//@models.0" transformation="//@transformations.0"/>
+  <outputModels modelAlias="catalogo.cat" model="//@models.1" transformation="//@transformations.1"/>
+  <outputModels modelAlias="arquitectura" model="//@models.2" transformation="//@transformations.2"/>
+  <inputFiles file="//@files.0" transformation="//@transformations.0"/>
+  <inputFiles file="//@files.1" transformation="//@transformations.1"/>
+  <outputFiles transformation="//@transformations.3" file="//@files.2"/>
+  <outputFiles transformation="//@transformations.4" file="//@files.3"/>
+  <outputFiles transformation="//@transformations.5" file="//@files.4"/>
+  <outputFiles transformation="//@transformations.6" file="//@files.5"/>
+  <outputFiles transformation="//@transformations.7" file="//@files.6"/>
+</com.mtcflow.model:MTC>

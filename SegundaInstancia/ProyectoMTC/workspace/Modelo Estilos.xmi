@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<estilos:RootSistema xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:estilos="http://www.example.org/estilos">
+  <vistas colorFondo="#DAA536">
+    <letra colorLetra="#3F51B5" fuente="Typeface.ITALIC"/>
+  </vistas>
+  <vistas colorFondo="#E75659" barraBusqueda="true" tecnologia="iOS">
+    <letra colorLetra="#FFFFFF" fuente="Helvetica" tamano="medium"/>
+  </vistas>
+  <vistas colorFondo="#414141" barraBusqueda="true" tecnologia="web">
+    <letra colorLetra="#FF0000" fuente="Helvetica Neue" tamano="medium"/>
+  </vistas>
+</estilos:RootSistema>

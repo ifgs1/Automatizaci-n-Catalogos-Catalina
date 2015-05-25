@@ -1,0 +1,109 @@
+RootSistema {
+	empresa Empresa {
+		nombre Carulla 
+		direccion "Cra 85 # 15 -56" 
+		email "carulla@gmail.com"
+		telefono "4567897" 
+		descripcion "Supermercado Mayorista" 
+		urlImagen
+		"http://www.revistalabarra.com.co/guia/files/logo/3222.jpg" 
+		catalogo
+		Catalogo {
+			idCatalogo 1 
+			nombre "Catalogo de Productos" 
+			categorias {
+				Categoria {
+					idCategoria 1 
+					nombre Comidas 
+					productos {
+						Producto {
+							idProducto 1 
+							nombre "Jamon Pietran" 
+							atributos { 
+								Atributo { 
+									idAtributo 1 
+									nombreAtributo 'precio' 
+									valorAtributo '12000' 
+									tipoDato 'Double' 
+								}
+								,
+								Atributo { 
+									idAtributo 2 
+									nombreAtributo 'imagen' 
+									valorAtributo 'http://www.elgranjamon.es/noticias/wp-content/uploads/2010/04/jamon-cocido.jpg' 
+									tipoDato 'String' 
+								}
+							}
+						}
+						,
+						Producto {
+							idProducto 2 
+							nombre "Queso Mozarella" 
+							atributos { 
+								Atributo { 
+									idAtributo 3 
+									nombreAtributo 'precio' 
+									valorAtributo '8000' 
+									tipoDato 'Double' 
+								}
+								,
+								Atributo { 
+									idAtributo 4 
+									nombreAtributo 'imagen' 
+									valorAtributo 'http://www.ar.all.biz/img/ar/catalog/21620.jpeg' 
+									tipoDato 'String' 
+								}
+							}
+						}
+					}
+				},
+				Categoria {
+					idCategoria 2 
+					nombre Bebidas 
+					productos {
+						Producto {
+							idProducto 3 
+							nombre "Jugo de Naranja" 
+							atributos { 
+								Atributo { 
+									idAtributo 5 
+									nombreAtributo 'precio' 
+									valorAtributo '6500' 
+									tipoDato 'Double' 
+								}
+								,
+								Atributo { 
+									idAtributo 6 
+									nombreAtributo 'imagen' 
+									valorAtributo 'http://www.dietapaleo.org/wp-content/uploads/2013/03/jugo-de-naranja.jpg' 
+									tipoDato 'String' 
+								}
+							}
+						}
+						,
+						Producto {
+							idProducto 4 
+							nombre "Pepsi" 
+							atributos { 
+								Atributo { 
+									idAtributo 7 
+									nombreAtributo 'precio' 
+									valorAtributo '4000' 
+									tipoDato 'Double' 
+								}
+								,
+								Atributo { 
+									idAtributo 8 
+									nombreAtributo 'imagen' 
+									valorAtributo 'http://www.oberholtzer-creative.com/visualculture/wp-content/uploads/2009/01/pepsi_can.jpg' 
+									tipoDato 'String' 
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+

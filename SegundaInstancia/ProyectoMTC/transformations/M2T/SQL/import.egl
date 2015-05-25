@@ -1,0 +1,7 @@
+[%   
+//CAPA PERSISTENCIA
+var capaPersistencia : arquitectura!CapaPersistencia := arquitectura!CapaPersistencia.all.at(0).println();
+	
+for(insert in capaPersistencia.inserts){ %]
+INSERT INTO [%=insert.table%] VALUES ([%=insert.values%]);
+[%}%] 

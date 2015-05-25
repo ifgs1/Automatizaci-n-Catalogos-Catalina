@@ -1,0 +1,36 @@
+RootSistema
+{
+	vistas {  
+		Vista {
+			colorFondo '#DAA536'
+			tecnologia android
+			letra Letra {
+				colorLetra '#3F51B5' 
+				fuente 'Typeface.ITALIC'
+				tamano small
+			}
+		}
+		,
+		barraBusqueda
+		Vista {
+			colorFondo '#E75659'
+			tecnologia iOS
+			letra Letra {
+				colorLetra '#FFFFFF' 
+				fuente 'Helvetica'
+				tamano medium
+			}
+		}
+		,
+		barraBusqueda
+		Vista {
+			colorFondo '#414141'
+			tecnologia web
+			letra Letra {
+				colorLetra '#FF0000' 
+				fuente 'Helvetica Neue'
+				tamano medium
+			}
+		}	
+	} 
+}

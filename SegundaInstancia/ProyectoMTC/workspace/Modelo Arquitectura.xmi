@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="ASCII"?>
+<arquitectura:RootSistema xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:arquitectura="http://www.example.org/arquitectura">
+  <presentaciones>
+    <vistas colorFondo="#DAA536" titulo="Categorias">
+      <letra color="#3F51B5" fuente="Typeface.ITALIC" tamano="12sp"/>
+    </vistas>
+    <vistas colorFondo="#DAA536" titulo="Productos">
+      <letra color="#3F51B5" fuente="Typeface.ITALIC" tamano="12sp"/>
+    </vistas>
+    <vistas colorFondo="#DAA536" titulo="Detalle del Producto">
+      <letra color="#3F51B5" fuente="Typeface.ITALIC" tamano="12sp"/>
+    </vistas>
+    <vistas colorFondo="#DAA536" titulo="Contactanos">
+      <letra color="#3F51B5" fuente="Typeface.ITALIC" tamano="12sp"/>
+    </vistas>
+    <vistas colorFondo="#DAA536" titulo="Acerca de">
+      <letra color="#3F51B5" fuente="Typeface.ITALIC" tamano="12sp"/>
+    </vistas>
+    <controladores nombre="MainActivity"/>
+    <controladores nombre="FragmentCategorias"/>
+    <controladores nombre="FragmentProductos"/>
+    <controladores nombre="FragmentDetalle"/>
+    <controladores nombre="FragmentAcerdaDe"/>
+    <controladores nombre="FragmentContactanos"/>
+    <comunicacionesHttp url="/empresa" nombre="EmpresaAsyncTask"/>
+    <comunicacionesHttp url="/categoria" nombre="CategoriasAsyncTask"/>
+    <comunicacionesHttp url="/productos/{categoria}" nombre="ProductosAsyncTask"/>
+    <entidades nombre="Empresa">
+      <atributos nombre="nombre" tipoDato="String"/>
+      <atributos nombre="direccion" tipoDato="String"/>
+      <atributos nombre="email" tipoDato="String"/>
+      <atributos nombre="telefono" tipoDato="String"/>
+      <atributos nombre="descripcion" tipoDato="String"/>
+      <atributos nombre="urlImagen" tipoDato="String"/>
+    </entidades>
+    <entidades nombre="Catalogo">
+      <atributos nombre="nombre" tipoDato="String"/>
+    </entidades>
+    <entidades nombre="Categoria">
+      <atributos nombre="id" tipoDato="Long"/>
+      <atributos nombre="nombre" tipoDato="String"/>
+    </entidades>
+    <entidades nombre="Producto">
+      <atributos nombre="nombre" tipoDato="String"/>
+      <atributos nombre="precio" tipoDato="Double"/>
+      <atributos nombre="imagen" tipoDato="String"/>
+    </entidades>
+  </presentaciones>
+  <presentaciones tecnologia="iOS" barraBusqueda="true">
+    <vistas colorFondo="#E75659" titulo="Categorias">
+      <letra color="#FFFFFF" fuente="Helvetica" tamano="16"/>
+    </vistas>
+    <vistas colorFondo="#E75659" titulo="Productos">
+      <letra color="#FFFFFF" fuente="Helvetica" tamano="16"/>
+    </vistas>
+    <vistas colorFondo="#E75659" titulo="Detalle del Producto">
+      <letra color="#FFFFFF" fuente="Helvetica" tamano="16"/>
+    </vistas>
+    <vistas colorFondo="#E75659" titulo="Contactanos">
+      <letra color="#FFFFFF" fuente="Helvetica" tamano="16"/>
+    </vistas>
+    <vistas colorFondo="#E75659" titulo="Acerca de">
+      <letra color="#FFFFFF" fuente="Helvetica" tamano="16"/>
+    </vistas>
+    <controladores nombre="ViewController"/>
+    <controladores nombre="CategoriasViewController"/>
+    <controladores nombre="ProductosViewController"/>
+    <controladores nombre="DetalleViewController"/>
+    <controladores nombre="AboutViewController"/>
+    <controladores nombre="ContactanosViewController"/>
+    <comunicacionesHttp url="/empresa" nombre="AFNetworkingEmpresa"/>
+    <comunicacionesHttp url="/categoria" nombre="AFNetworkingCategorias"/>
+    <comunicacionesHttp url="/productos/{categoria}" nombre="AFNetworkingProductos"/>
+    <entidades nombre="Empresa">
+      <atributos nombre="nombre" tipoDato="String"/>
+      <atributos nombre="direccion" tipoDato="String"/>
+      <atributos nombre="email" tipoDato="String"/>
+      <atributos nombre="telefono" tipoDato="String"/>
+      <atributos nombre="descripcion" tipoDato="String"/>
+      <atributos nombre="urlImagen" tipoDato="String"/>
+    </entidades>
+    <entidades nombre="Catalogo">
+      <atributos nombre="nombre" tipoDato="String"/>
+    </entidades>
+    <entidades nombre="Categoria">
+      <atributos nombre="id" tipoDato="Long"/>
+      <atributos nombre="nombre" tipoDato="String"/>
+    </entidades>
+    <entidades nombre="Producto">
+      <atributos nombre="nombre" tipoDato="String"/>
+      <atributos nombre="precio" tipoDato="Double"/>
+      <atributos nombre="imagen" tipoDato="String"/>
+    </entidades>
+  </presentaciones>
+  <presentaciones tecnologia="web" barraBusqueda="true">
+    <vistas colorFondo="#414141" titulo="Categorias">
+      <letra color="#FF0000" fuente="Helvetica Neue" tamano="18px"/>
+    </vistas>
+    <vistas colorFondo="#414141" titulo="Productos">
+      <letra color="#FF0000" fuente="Helvetica Neue" tamano="18px"/>
+    </vistas>
+    <vistas colorFondo="#414141" titulo="Detalle del Producto">
+      <letra color="#FF0000" fuente="Helvetica Neue" tamano="18px"/>
+    </vistas>
+    <vistas colorFondo="#414141" titulo="Contactanos">
+      <letra color="#FF0000" fuente="Helvetica Neue" tamano="18px"/>
+    </vistas>
+    <vistas colorFondo="#414141" titulo="Acerca de">
+      <letra color="#FF0000" fuente="Helvetica Neue" tamano="18px"/>
+    </vistas>
+    <controladores nombre="logica.js"/>
+    <comunicacionesHttp url="/empresa" nombre="XmlHttpRequest"/>
+    <comunicacionesHttp url="/categoria" nombre="XmlHttpRequest"/>
+    <comunicacionesHttp url="/productos/{categoria}" nombre="XmlHttpRequest"/>
+    <entidades nombre="Empresa">
+      <atributos nombre="nombre" tipoDato="String"/>
+      <atributos nombre="direccion" tipoDato="String"/>
+      <atributos nombre="email" tipoDato="String"/>
+      <atributos nombre="telefono" tipoDato="String"/>
+      <atributos nombre="descripcion" tipoDato="String"/>
+      <atributos nombre="urlImagen" tipoDato="String"/>
+    </entidades>
+    <entidades nombre="Catalogo">
+      <atributos nombre="nombre" tipoDato="String"/>
+    </entidades>
+    <entidades nombre="Categoria">
+      <atributos nombre="id" tipoDato="Long"/>
+      <atributos nombre="nombre" tipoDato="String"/>
+    </entidades>
+    <entidades nombre="Producto">
+      <atributos nombre="nombre" tipoDato="String"/>
+      <atributos nombre="precio" tipoDato="Double"/>
+      <atributos nombre="imagen" tipoDato="String"/>
+    </entidades>
+  </presentaciones>
+  <capaLogicaNegocio>
+    <interfaces nombre="ICatalogo">
+      <metodos path="/empresa" tipoRetorno="List&lt;EmpresaJson>"/>
+      <metodos path="/empresa/:id" tipoRetorno="EmpresaJson"/>
+      <metodos path="/catalogo" tipoRetorno="List&lt;CatalogoJson>"/>
+      <metodos path="/catalogo/:id" tipoRetorno="CatalogoJson"/>
+      <metodos path="/categoria" tipoRetorno="List&lt;CategoriaJson>"/>
+      <metodos path="/categoria/:id" tipoRetorno="CategoriaJson"/>
+      <metodos path="/producto" tipoRetorno="List&lt;ProductoJson>"/>
+      <metodos path="/producto/:id" tipoRetorno="ProductoJson"/>
+    </interfaces>
+    <beans implementa="//@capaLogicaNegocio/@interfaces.0" nombre="CatalogoBean"/>
+    <jsonsDTO nombre="Empresa">
+      <atributos nombre="nombre" tipoDato="String"/>
+      <atributos nombre="direccion" tipoDato="String"/>
+      <atributos nombre="email" tipoDato="String"/>
+      <atributos nombre="telefono" tipoDato="String"/>
+      <atributos nombre="descripcion" tipoDato="String"/>
+      <atributos nombre="urlImagen" tipoDato="String"/>
+    </jsonsDTO>
+    <jsonsDTO nombre="Catalogo">
+      <atributos nombre="nombre" tipoDato="String"/>
+    </jsonsDTO>
+    <jsonsDTO nombre="Categoria">
+      <atributos nombre="id" tipoDato="Long"/>
+      <atributos nombre="nombre" tipoDato="String"/>
+    </jsonsDTO>
+    <jsonsDTO nombre="Producto">
+      <atributos nombre="nombre" tipoDato="String"/>
+      <atributos nombre="precio" tipoDato="Double"/>
+      <atributos nombre="imagen" tipoDato="String"/>
+    </jsonsDTO>
+    <mappers nombre="EmpresaJsonMapper">
+      <metodos tipoRetorno="EmpresaJson" argumentos="Empresa e"/>
+    </mappers>
+    <mappers nombre="CatalogoJsonMapper">
+      <metodos tipoRetorno="CatalogoJson" argumentos="Catalogo c"/>
+    </mappers>
+    <mappers nombre="CategoriaJsonMapper">
+      <metodos tipoRetorno="CategoriaJson" argumentos="Categoria c"/>
+    </mappers>
+    <mappers nombre="ProductoJsonMapper">
+      <metodos tipoRetorno="ProductoJson" argumentos="Producto p"/>
+    </mappers>
+  </capaLogicaNegocio>
+  <capaServicio>
+    <servicios path="/catalogo-service/rest/services">
+      <metodos path="/empresa" tipoRetorno="List&lt;EmpresaJson>"/>
+      <metodos path="/empresa/:id" tipoRetorno="EmpresaJson"/>
+      <metodos path="/catalogo" tipoRetorno="List&lt;CatalogoJson>"/>
+      <metodos path="/catalogo/:id" tipoRetorno="CatalogoJson"/>
+      <metodos path="/categoria" tipoRetorno="List&lt;CategoriaJson>"/>
+      <metodos path="/categoria/:id" tipoRetorno="CategoriaJson"/>
+      <metodos path="/producto" tipoRetorno="List&lt;ProductoJson>"/>
+      <metodos path="/producto/:id" tipoRetorno="ProductoJson"/>
+    </servicios>
+  </capaServicio>
+  <capaAccesoDatos>
+    <interfaces nombre="IEmpresaDAO">
+      <metodos tipoRetorno="Empresa"/>
+    </interfaces>
+    <interfaces nombre="ICatalogoDAO">
+      <metodos tipoRetorno="Catalogo"/>
+    </interfaces>
+    <interfaces nombre="ICategoriaDAO">
+      <metodos tipoRetorno="Categoria"/>
+    </interfaces>
+    <interfaces nombre="IProductoDAO">
+      <metodos tipoRetorno="Producto"/>
+    </interfaces>
+    <beans implementa="//@capaAccesoDatos/@interfaces.0" nombre="EmpresaDAO"/>
+    <beans implementa="//@capaAccesoDatos/@interfaces.1" nombre="CatalogoDAO"/>
+    <beans implementa="//@capaAccesoDatos/@interfaces.2" nombre="CategoriaDAO"/>
+    <beans implementa="//@capaAccesoDatos/@interfaces.3" nombre="ProductoDAO"/>
+  </capaAccesoDatos>
+  <capaPersistencia>
+    <entidades nombre="Empresa">
+      <atributos nombre="id" tipoDato="Long"/>
+      <atributos nombre="nombre" tipoDato="String"/>
+      <atributos nombre="direccion" tipoDato="String"/>
+      <atributos nombre="email" tipoDato="String"/>
+      <atributos nombre="telefono" tipoDato="String"/>
+      <atributos nombre="descripcion" tipoDato="String"/>
+      <atributos nombre="urlImagen" tipoDato="String"/>
+    </entidades>
+    <entidades nombre="Catalogo">
+      <atributos nombre="id" tipoDato="Long"/>
+      <atributos nombre="nombre" tipoDato="String"/>
+    </entidades>
+    <entidades nombre="Categoria">
+      <atributos nombre="id" tipoDato="Long"/>
+      <atributos nombre="nombre" tipoDato="String"/>
+    </entidades>
+    <entidades nombre="Producto">
+      <atributos nombre="id" tipoDato="Long"/>
+      <atributos nombre="nombre" tipoDato="String"/>
+      <atributos nombre="precio" tipoDato="Double"/>
+      <atributos nombre="imagen" tipoDato="String"/>
+    </entidades>
+    <inserts table="Empresa (id,nombre,direccion,email,telefono,descripcion,urlImagen)" values="1,'Carulla','Cra 85 # 15 -56','carulla@gmail.com','4567897','Supermercado Mayorista','http://www.revistalabarra.com.co/guia/files/logo/3222.jpg'"/>
+    <inserts table="Catalogo (id,nombre)" values="1,'Catalogo de Productos'"/>
+    <inserts table="Categoria (id,nombre,catalogo_id)" values="1,'Comidas',1"/>
+    <inserts table="Producto (id,nombre,precio,imagen,categoria_id)" values="1,'Jamon Pietran',12000,'http://www.elgranjamon.es/noticias/wp-content/uploads/2010/04/jamon-cocido.jpg',1"/>
+    <inserts table="Producto (id,nombre,precio,imagen,categoria_id)" values="2,'Queso Mozarella',8000,'http://www.ar.all.biz/img/ar/catalog/21620.jpeg',1"/>
+    <inserts table="Categoria (id,nombre,catalogo_id)" values="2,'Bebidas',1"/>
+    <inserts table="Producto (id,nombre,precio,imagen,categoria_id)" values="3,'Jugo de Naranja',6500,'http://www.dietapaleo.org/wp-content/uploads/2013/03/jugo-de-naranja.jpg',2"/>
+    <inserts table="Producto (id,nombre,precio,imagen,categoria_id)" values="4,'Pepsi',4000,'http://www.oberholtzer-creative.com/visualculture/wp-content/uploads/2009/01/pepsi_can.jpg',2"/>
+  </capaPersistencia>
+</arquitectura:RootSistema>

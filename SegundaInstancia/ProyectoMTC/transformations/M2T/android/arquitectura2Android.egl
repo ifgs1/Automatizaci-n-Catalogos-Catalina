@@ -1,0 +1,46 @@
+[%
+
+	// LAYOUTS
+	var templateProductoItemLayout:Template:= TemplateFactory.load('Catalogo/app/src/main/res/layout/producto_item.egl');
+	templateProductoItemLayout.generate('Catalogo/app/src/main/res/layout/producto_item.xml');
+	
+	var templateProductoDetalleLayout:Template:= TemplateFactory.load('Catalogo/app/src/main/res/layout/producto_detalle_dialogo.egl');
+	templateProductoDetalleLayout.generate('Catalogo/app/src/main/res/layout/producto_detalle_dialogo.xml');
+	
+	// VALUES, color.xml, dimnes.xml, strings.xml
+	var templateDimens:Template:= TemplateFactory.load('Catalogo/app/src/main/res/values/dimens.egl');
+	templateDimens.generate('Catalogo/app/src/main/res/values/dimens.xml');
+	
+	var templateColor:Template:= TemplateFactory.load('Catalogo/app/src/main/res/values/color.egl');
+	templateColor.generate('Catalogo/app/src/main/res/values/color.xml');
+	
+	var templateUtilities:Template:= TemplateFactory.load('Catalogo/app/src/main/java/com/android/catalogo/utilities/Utilities.egl');
+	templateUtilities.generate('Catalogo/app/src/main/java/com/android/catalogo/utilities/Utilities.java');
+	
+	// MODELO, Producto, Empresa, Categoria
+	
+	var templateProducto:Template:= TemplateFactory.load('Catalogo/app/src/main/java/com/android/catalogo/model/Producto.egl');
+	templateProducto.generate('Catalogo/app/src/main/java/com/android/catalogo/model/Producto.java');
+	
+	var templateEmpresa:Template:= TemplateFactory.load('Catalogo/app/src/main/java/com/android/catalogo/model/Empresa.egl');
+	templateEmpresa.generate('Catalogo/app/src/main/java/com/android/catalogo/model/Empresa.java');
+	
+	var templateCategoria:Template:= TemplateFactory.load('Catalogo/app/src/main/java/com/android/catalogo/model/Categoria.egl');
+	templateCategoria.generate('Catalogo/app/src/main/java/com/android/catalogo/model/Categoria.java');
+	
+	// Dialogo
+	var templateDialogo:Template:= TemplateFactory.load('Catalogo/app/src/main/java/com/android/catalogo/dialog/ProductoDetalleDialogo.egl');
+	templateDialogo.generate('Catalogo/app/src/main/java/com/android/catalogo/dialog/ProductoDetalleDialogo.java');
+	
+	// Producto Adaptador
+	var templateProductoAdapter:Template:= TemplateFactory.load('Catalogo/app/src/main/java/com/android/catalogo/adapters/ProductoAdapter.egl');
+	templateProductoAdapter.generate('Catalogo/app/src/main/java/com/android/catalogo/adapters/ProductoAdapter.java');
+	
+	// Fragmentos
+	var templateProductosFragment:Template:= TemplateFactory.load('Catalogo/app/src/main/java/com/android/catalogo/fragments/ProductosFragment.egl');
+	templateProductosFragment.generate('Catalogo/app/src/main/java/com/android/catalogo/fragments/ProductosFragment.java');
+	
+	var templateCategoriasFragment:Template:= TemplateFactory.load('Catalogo/app/src/main/java/com/android/catalogo/fragments/CategoriasFragment.egl');
+	templateCategoriasFragment.generate('Catalogo/app/src/main/java/com/android/catalogo/fragments/CategoriasFragment.java');
+	
+%]
