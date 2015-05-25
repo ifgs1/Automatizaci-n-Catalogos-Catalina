@@ -13,10 +13,10 @@ RootSistema
 		,
 		barraBusqueda
 		Vista {
-			colorFondo '#DAA536'
+			colorFondo '#3F51B5'
 			tecnologia iOS
 			letra Letra {
-				colorLetra '#3F51B5' 
+				colorLetra '#DAA536' 
 				fuente 'Helvetica'
 				tamano large
 			}
