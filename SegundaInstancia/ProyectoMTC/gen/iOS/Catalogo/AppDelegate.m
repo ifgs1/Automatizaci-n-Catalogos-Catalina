@@ -18,15 +18,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //Navigation bar color
-    [[UINavigationBar appearance] setBarTintColor:[self colorWithHexString:@"#3F51B5"]];
+    [[UINavigationBar appearance] setBarTintColor:[self colorWithHexString:@"DAA536"]];
     
     //all labels properties
     [[UILabel appearance] setFont:[UIFont fontWithName:@"Helvetica" size:20]];
-    [[UILabel appearance] setTextColor:[self colorWithHexString:@"#DAA536"]];
+    [[UILabel appearance] setTextColor:[self colorWithHexString:@"3F51B5"]];
 
     //all tableview properties
     [[UITableViewCell appearance] setFont:[UIFont fontWithName:@"Helvetica" size:20]];
-    [[UITableViewCell appearance] setTextColor:[self colorWithHexString:@"#DAA536"]];
+    [[UITableViewCell appearance] setTextColor:[self colorWithHexString:@"3F51B5"]];
 
     
     return YES;
