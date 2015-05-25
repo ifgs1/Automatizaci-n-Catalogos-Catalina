@@ -1,12 +1,12 @@
 RootSistema {
 	empresa Empresa {
-		nombre Exito 
-		direccion "Av 68 # 15 -56" 
-		email "exito@gmail.com"
+		nombre Carulla 
+		direccion "Calle 85 # 15 -56" 
+		email "carulla@gmail.com"
 		telefono "4567897" 
-		descripcion "Supermercado Mayorista" 
+		descripcion "Supermercado Mayorista Carulla" 
 		urlImagen
-		"http://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Almacenes_exito_logo.svg/1028px-Almacenes_exito_logo.svg.png" 
+		"http://www.revistalabarra.com.co/guia/files/logo/3222.jpg" 
 		catalogo
 		Catalogo {
 			idCatalogo 1 
@@ -33,13 +33,6 @@ RootSistema {
 									valorAtributo 'http://www.elgranjamon.es/noticias/wp-content/uploads/2010/04/jamon-cocido.jpg' 
 									tipoDato 'String' 
 								}
-								,
-								Atributo { 
-									idAtributo 3 
-									nombreAtributo 'promocion' 
-									valorAtributo '30%' 
-									tipoDato 'String' 
-								}
 							}
 						}
 						,
@@ -48,23 +41,16 @@ RootSistema {
 							nombre "Queso Mozarella" 
 							atributos { 
 								Atributo { 
-									idAtributo 4 
+									idAtributo 3 
 									nombreAtributo 'precio' 
 									valorAtributo '8000' 
 									tipoDato 'Double' 
 								}
 								,
 								Atributo { 
-									idAtributo 5 
+									idAtributo 4 
 									nombreAtributo 'imagen' 
 									valorAtributo 'http://www.ar.all.biz/img/ar/catalog/21620.jpeg' 
-									tipoDato 'String' 
-								}
-								,
-								Atributo { 
-									idAtributo 6 
-									nombreAtributo 'promocion' 
-									valorAtributo '40%' 
 									tipoDato 'String' 
 								}
 							}
@@ -80,23 +66,16 @@ RootSistema {
 							nombre "Jugo de Naranja" 
 							atributos { 
 								Atributo { 
-									idAtributo 7 
+									idAtributo 5 
 									nombreAtributo 'precio' 
 									valorAtributo '6500' 
 									tipoDato 'Double' 
 								}
 								,
 								Atributo { 
-									idAtributo 8 
+									idAtributo 6 
 									nombreAtributo 'imagen' 
 									valorAtributo 'http://www.dietapaleo.org/wp-content/uploads/2013/03/jugo-de-naranja.jpg' 
-									tipoDato 'String' 
-								}
-								,
-								Atributo { 
-									idAtributo 9 
-									nombreAtributo 'promocion' 
-									valorAtributo '30%' 
 									tipoDato 'String' 
 								}
 							}
@@ -107,23 +86,16 @@ RootSistema {
 							nombre "Pepsi" 
 							atributos { 
 								Atributo { 
-									idAtributo 10 
+									idAtributo 7 
 									nombreAtributo 'precio' 
 									valorAtributo '4000' 
 									tipoDato 'Double' 
 								}
 								,
 								Atributo { 
-									idAtributo 11 
+									idAtributo 8 
 									nombreAtributo 'imagen' 
 									valorAtributo 'http://www.oberholtzer-creative.com/visualculture/wp-content/uploads/2009/01/pepsi_can.jpg' 
-									tipoDato 'String' 
-								}
-								,
-								Atributo { 
-									idAtributo 12 
-									nombreAtributo 'promocion' 
-									valorAtributo '70%' 
 									tipoDato 'String' 
 								}
 							}
@@ -139,23 +111,16 @@ RootSistema {
 							nombre "Camiseta Adidas" 
 							atributos { 
 								Atributo { 
-									idAtributo 13
+									idAtributo 9
 									nombreAtributo 'precio' 
 									valorAtributo '6500' 
 									tipoDato 'Double' 
 								}
 								,
 								Atributo { 
-									idAtributo 14 
+									idAtributo 10 
 									nombreAtributo 'imagen' 
 									valorAtributo 'http://www.eblog.com.ar/wp-content/uploads/SelAlemana.jpg' 
-									tipoDato 'String' 
-								}
-								,
-								Atributo { 
-									idAtributo 15 
-									nombreAtributo 'promocion' 
-									valorAtributo '25%' 
 									tipoDato 'String' 
 								}
 							}
@@ -166,23 +131,16 @@ RootSistema {
 							nombre "Gorra Nike" 
 							atributos { 
 								Atributo { 
-									idAtributo 16 
+									idAtributo 11 
 									nombreAtributo 'precio' 
 									valorAtributo '4000' 
 									tipoDato 'Double' 
 								}
 								,
 								Atributo { 
-									idAtributo 17 
+									idAtributo 12 
 									nombreAtributo 'imagen' 
 									valorAtributo 'http://images.nike.com/is/image/emea/PDP_HERO/Nike-FC-Block-True-Hat-648344_010_A.jpg' 
-									tipoDato 'String' 
-								}
-								,
-								Atributo { 
-									idAtributo 18 
-									nombreAtributo 'promocion' 
-									valorAtributo '30%' 
 									tipoDato 'String' 
 								}
 							}

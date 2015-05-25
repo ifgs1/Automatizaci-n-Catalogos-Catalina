@@ -3,10 +3,10 @@ RootSistema
 	vistas {
 		barraBusqueda  
 		Vista {
-			colorFondo '#FF8800'
+			colorFondo '#669900'
 			tecnologia android
 			letra Letra {
-				colorLetra '#3F51B5'
+				colorLetra '#000000'
 				fuente 'Typeface.NORMAL'
 				tamano small
 			}
@@ -14,10 +14,10 @@ RootSistema
 		,
 		barraBusqueda
 		Vista {
-			colorFondo '#FF8800'
+			colorFondo '669900'
 			tecnologia iOS
 			letra Letra {
-				colorLetra 'DAA536'
+				colorLetra '000000'
 				fuente 'Helvetica'
 				tamano small
 			}
@@ -25,10 +25,10 @@ RootSistema
 		,
 		barraBusqueda
 		Vista {
-			colorFondo '#FF8800'
+			colorFondo '#669900'
 			tecnologia web
 			letra Letra {
-				colorLetra '#3F51B5' 
+				colorLetra  '#000000'
 				fuente 'Helvetica Neue'
 				tamano medium
 			}

@@ -21,8 +21,6 @@ public class Categoria implements Serializable{
 	
 	private static final String PRODUCTO_IMAGEN = "imagen";
 	
-	private static final String PRODUCTO_PROMOCION = "promocion";
-	
 
 	private static final String CATEGORIA_ID = "id";
 	
@@ -88,9 +86,8 @@ public class Categoria implements Serializable{
 				String producto_nombre =  jsonObjectProducto.getString(PRODUCTO_NOMBRE);
 				Double producto_precio =  jsonObjectProducto.getDouble(PRODUCTO_PRECIO);
 				String producto_imagen =  jsonObjectProducto.getString(PRODUCTO_IMAGEN);
-				String producto_promocion =  jsonObjectProducto.getString(PRODUCTO_PROMOCION);
 			
-                productoList.add(new Producto( producto_nombre ,  producto_precio ,  producto_imagen ,  producto_promocion));
+                productoList.add(new Producto( producto_nombre ,  producto_precio ,  producto_imagen));
 
             }
             Categoria categoria = new Categoria(productoList, categoria_id ,  categoria_nombre);

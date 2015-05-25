@@ -67,7 +67,6 @@
          product.nombre = [pr objectForKey:@"nombre"];
          product.precio = [pr objectForKey:@"precio"];
          product.imagen = [pr objectForKey:@"imagen"];
-         product.promocion = [pr objectForKey:@"promocion"];
         [self.listProducts addObject:product];
         [filteredProductList addObject:product];
 
@@ -118,7 +117,6 @@
    			   UIImage * image = [UIImage imageWithData:imageData];
   			   cell.imageView.image = image;
 
-             
              
     
 

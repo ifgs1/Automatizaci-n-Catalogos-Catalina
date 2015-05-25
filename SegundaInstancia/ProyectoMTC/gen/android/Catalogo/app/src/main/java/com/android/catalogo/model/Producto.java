@@ -11,13 +11,11 @@ public class Producto  implements Serializable {
 	private String nombre;
 	private Double precio;
 	private String imagen;
-	private String promocion;
 
-    public Producto( String nombre ,  Double precio ,  String imagen ,  String promocion) {
+    public Producto( String nombre ,  Double precio ,  String imagen) {
 		this.nombre = nombre;
 		this.precio = precio;
 		this.imagen = imagen;
-		this.promocion = promocion;
     }
 
 	
@@ -45,15 +43,6 @@ public class Producto  implements Serializable {
     
     public void setimagen(String imagen) {
         this.imagen = imagen;
-    }
-		
-	
-	public String getpromocion() {
-        return promocion;
-    }
-    
-    public void setpromocion(String promocion) {
-        this.promocion = promocion;
     }
 		
 	
