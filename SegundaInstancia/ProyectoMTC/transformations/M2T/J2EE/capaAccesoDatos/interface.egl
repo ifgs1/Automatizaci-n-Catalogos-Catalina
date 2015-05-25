@@ -1,0 +1,15 @@
+package interfaces;
+
+import java.util.List;
+
+import entities.Empresa;
+import entities.Catalogo;
+import entities.Categoria;
+import entities.Producto;
+
+public interface [%=interface.nombre%] {
+	
+	public List<[%=interface.metodos.at(0).tipoRetorno%]> getAll[%=interface.metodos.at(0).tipoRetorno%]();
+	
+	public [%=interface.metodos.at(0).tipoRetorno%] get[%=interface.metodos.at(0).tipoRetorno%](Long id);
+}

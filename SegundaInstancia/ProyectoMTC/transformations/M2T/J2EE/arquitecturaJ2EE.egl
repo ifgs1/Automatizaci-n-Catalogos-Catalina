@@ -1,4 +1,58 @@
 [%
-	var t:Template:= TemplateFactory.load('CatalogoService.egl');
-	t.generate('CatalogoService.java');
+	var t:Template:= TemplateFactory.load('capaServicio/service.egl');
+	t.generate('backend/catalogo-service/src/main/java/services/CatalogoService.java');
+	
+	//Business logic layer EGL
+	//--Interface
+	var interfaceBl := arquitectura!CapaLogicaNegocio.all.at(0).interfaces.at(0);
+	var bl:Template:= TemplateFactory.load('capaLogicaNegocio/interface.egl');
+	bl.populate('interfaceBl',interfaceBl);
+	bl.generate('backend/catalogo-businessLogic/src/main/java/interfaces/'+interfaceBl.nombre+'.java');
+	//--Bean
+	var beanBl := arquitectura!CapaLogicaNegocio.all.at(0).beans.at(0);
+	bl = TemplateFactory.load('capaLogicaNegocio/bean.egl');
+	bl.populate('beanBl',beanBl);
+	bl.generate('backend/catalogo-businessLogic/src/main/java/impl/'+beanBl.nombre+'.java');
+	//--Json
+	var jsons := arquitectura!CapaLogicaNegocio.all.at(0).jsonsDTO;
+	for(itr in jsons){
+		bl = TemplateFactory.load('capaLogicaNegocio/json.egl');
+		bl.populate('json',itr);
+		bl.generate('backend/catalogo-businessLogic/src/main/java/json/'+itr.nombre+'Json.java');
+	}
+	//--Mappers
+	var mappers := arquitectura!CapaLogicaNegocio.all.at(0).mappers; 
+	for(itr in mappers){
+		bl = TemplateFactory.load('capaLogicaNegocio/mapper.egl');
+		bl.populate('mapper',itr);
+		bl.generate('backend/catalogo-businessLogic/src/main/java/mapper/'+itr.nombre+'.java');
+	}
+	
+	//Data access layer EGL
+	//--Interface
+	var da = null;
+	var interfacesDA := arquitectura!CapaAccesoDatos.all.at(0).interfaces;
+	for(itr in interfacesDA){
+		da = TemplateFactory.load('capaAccesoDatos/interface.egl');
+		da.populate('interface',itr);
+		da.generate('backend/catalogo-dataAccess/src/main/java/interfaces/'+itr.nombre+'.java');
+	}
+	//--Beans
+	var daos := arquitectura!CapaAccesoDatos.all.at(0).beans;
+	for(itr in daos){
+		da = TemplateFactory.load('capaAccesoDatos/dao.egl');
+		da.populate('dao',itr);
+		da.generate('backend/catalogo-dataAccess/src/main/java/impl/'+itr.nombre+'.java');
+	}
+	
+	//Persistence layer EGL
+	//--Entity
+	var pe = null;
+	var entidades := arquitectura!CapaPersistencia.all.at(0).entidades;
+	for(itr in entidades){
+		pe = TemplateFactory.load('capaPersistencia/entity.egl');
+		itr.nombre.println();
+		pe.populate('entity',itr);
+		pe.generate('backend/catalogo-model/src/main/java/entities/'+itr.nombre+'.java');
+	}
 %]

@@ -1,0 +1,153 @@
+package entities;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+@Entity
+
+[%if(entity.nombre.contains("Empresa")){%]
+@NamedQueries({
+@NamedQuery(name="Empresa.findAll", query="SELECT e FROM Empresa e")
+})
+[% }%]
+[%if(entity.nombre.contains("Catalogo")){%]
+@NamedQueries({
+@NamedQuery(name="Catalogo.findAll", query="SELECT c FROM Catalogo c")
+})
+[% }%]
+[%if(entity.nombre.contains("Categoria")){%]
+@NamedQueries({
+@NamedQuery(name="Categoria.findAll", query="SELECT c FROM Categoria c")
+})
+[% }%]
+[%if(entity.nombre.contains("Producto")){%]
+@NamedQueries({
+@NamedQuery(name="Producto.findAll", query="SELECT p FROM Producto p"),
+@NamedQuery(name="Producto.findByCategoria", query="SELECT p FROM Producto p where p.categoria=:categoria")
+})
+[% }%]
+public class [%=entity.nombre%] implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY) 
+	private Long id;
+	
+	public Long getId(){
+		return id;
+	}
+	
+	public void setId(Long id){
+	    this.id = id;
+	}
+	
+	[%
+	for(itr in entity.atributos){
+	if(not itr.nombre.contains("id")){
+		  var tmp : String := itr.nombre;
+		var firstUpper =tmp.substring(0, 1).toUpperCase() + tmp.substring(1);%]
+	
+	private [%=itr.tipoDato%] [%=itr.nombre%];
+	
+	public [%=itr.tipoDato%] get[%=firstUpper%](){
+		return [%=itr.nombre%];
+	}
+	
+	public void set[%=firstUpper%]([%=itr.tipoDato%] [%=itr.nombre%]){
+		this.[%=itr.nombre%] = [%=itr.nombre%];
+	}
+	  	
+	[%}}
+	
+
+	if(entity.nombre.contains("Empresa")){%]
+	@OneToOne(fetch=FetchType.EAGER)
+	private Catalogo catalogo;
+	
+	public Catalogo getCatalogo() {
+		return catalogo;
+	}
+
+	public void setCatalogo(Catalogo catalogo) {
+		this.catalogo = catalogo;
+	}
+	[% }%]
+	[%if(entity.nombre.contains("Catalogo")){%]
+	@OneToOne(mappedBy="catalogo")
+	private Empresa empresa;
+	
+	@OneToMany(fetch=FetchType.EAGER, mappedBy="catalogo")
+	private List<Categoria> categorias;
+	
+	public Empresa getEmpresa() {
+		return empresa;
+	}
+
+	public void setEmpresa(Empresa empresa) {
+		this.empresa = empresa;
+	}
+
+	public List<Categoria> getCategorias() {
+		return categorias;
+	}
+
+	public void setCategorias(List<Categoria> categorias) {
+		if(categorias == null){
+			categorias = new ArrayList<Categoria>();
+		}
+		this.categorias = categorias;
+	}
+	[% }%]
+	[%if(entity.nombre.contains("Categoria")){%]
+	@ManyToOne(fetch=FetchType.EAGER)
+	private Catalogo catalogo;
+	
+	@OneToMany(fetch=FetchType.LAZY, mappedBy="categoria")
+	private List<Producto> productos;
+	
+	public Catalogo getCatalogo() {
+		return catalogo;
+	}
+
+	public void setCatalogo(Catalogo catalogo) {
+		this.catalogo = catalogo;
+	}
+
+	public List<Producto> getProductos() {
+		if(productos == null){
+			productos = new ArrayList<Producto>();
+		}
+		return productos;
+	}
+
+	public void setProductos(List<Producto> productos) {
+		this.productos = productos;
+	}
+	[% }%]
+	[%if(entity.nombre.contains("Producto")){%]
+	@ManyToOne(fetch=FetchType.EAGER)
+	private Categoria categoria;
+	
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+	[% }%]
+
+}

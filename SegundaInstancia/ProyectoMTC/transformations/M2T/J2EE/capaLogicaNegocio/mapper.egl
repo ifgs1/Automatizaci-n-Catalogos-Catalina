@@ -1,0 +1,76 @@
+package mapper;
+
+import java.util.ArrayList;
+import java.util.List;
+import entities.Empresa;
+import json.EmpresaJson;
+import entities.Catalogo;
+import entities.Categoria;
+import json.CatalogoJson;
+import json.CategoriaJson;
+import entities.Categoria;
+import entities.Producto;
+import json.CategoriaJson;
+import json.ProductoJson;
+import entities.Producto;
+import json.ProductoJson;
+
+public class [%=mapper.nombre%] {
+	[%var returnName = null;
+	for(itr in mapper.metodos){%]
+		public static [%=itr.tipoRetorno%] convertTo[%=itr.tipoRetorno%]([%=itr.argumentos%]){
+		[%	
+		var tmp : String :=itr.tipoRetorno;
+		var tmp2 : String :=itr.argumentos;
+		var split = tmp2.split(" ");
+		var firstLower =tmp.substring(0, 1).toLowerCase() + tmp.substring(1);%]
+			[%=itr.tipoRetorno%] [%=firstLower%] = new [%=itr.tipoRetorno%]();
+			
+		[%
+		returnName = firstLower;
+		var json = null;
+		if(mapper.nombre.contains("Empresa")){%]
+			[%=firstLower%].setCatalogoId([%=split.at(1)%].getCatalogo().getId());
+		[%
+			json = arquitectura!CapaLogicaNegocio.all.at(0).jsonsDTO.select(x | x.nombre.contains("Empresa"));
+		}
+		if(mapper.nombre.contains("Catalogo")){%]
+			List<CategoriaJson> categorias = new ArrayList<CategoriaJson>();
+			for(Categoria c1:[%=split.at(1)%].getCategorias()){
+				categorias.add(CategoriaJsonMapper.convertToCategoriaJson(c1));
+			}
+			[%=firstLower%].setCategorias(categorias);
+			[%=firstLower%].setEmpresaId([%=split.at(1)%].getEmpresa().getId());
+		[%
+			json = arquitectura!CapaLogicaNegocio.all.at(0).jsonsDTO.select(x | x.nombre.contains("Catalogo"));
+		}
+		if(mapper.nombre.contains("Categoria")){%]
+			List<ProductoJson> productos = new ArrayList<ProductoJson>();
+			for(Producto p1 : [%=split.at(1)%].getProductos()){
+				productos.add(ProductoJsonMapper.convertToProductoJson(p1));
+			}
+			[%=firstLower%].setProductos(productos);
+			[%=firstLower%].setCatalogoId([%=split.at(1)%].getCatalogo().getId());
+		[%
+			json = arquitectura!CapaLogicaNegocio.all.at(0).jsonsDTO.select(x | x.nombre.contains("Categoria"));
+		}
+		if(mapper.nombre.contains("Producto")){%]
+			[%=firstLower%].setCategoriaId([%=split.at(1)%].getCategoria().getId());
+		[%
+			json = arquitectura!CapaLogicaNegocio.all.at(0).jsonsDTO.select(x | x.nombre.contains("Producto"));
+		}
+		for(itr2 in json.at(0).atributos){
+			var tmp3 : String := itr2.nombre;
+			var uc = tmp3.substring(0, 1).toUpperCase() + tmp3.substring(1);%]
+		[%
+			var lc = tmp3.substring(0, 1).toLowerCase() + tmp3.substring(1);%]
+			[%=firstLower%].set[%=uc%]([%=split.at(1)%].get[%=uc%]());
+		[%
+		}
+		%]
+		[%}
+		%]
+		return [%=returnName%];
+		}
+	
+}

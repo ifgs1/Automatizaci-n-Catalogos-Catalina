@@ -1,0 +1,40 @@
+
+package interfaces;
+
+import java.util.List;
+
+import json.CatalogoJson;
+import json.EmpresaJson;
+import json.CategoriaJson;
+import json.ProductoJson;
+
+public interface [%=interfaceBl.nombre%]{
+
+	[% for(itr in interfaceBl.metodos){
+			var methodPartName : String := itr.path;
+			var encontroList : Boolean := false;
+			var splitMethodName = methodPartName.split("/");
+			if(itr.tipoRetorno.contains("List<")){
+				encontroList = true;
+			}
+			var tmp : String := "";
+			if(encontroList){
+				tmp = " getAll"+splitMethodName.at(1).substring(0, 1).toUpperCase() + splitMethodName.at(1).substring(1)+"s";
+			}else{
+				tmp = " get"+splitMethodName.at(1).substring(0, 1).toUpperCase() + splitMethodName.at(1).substring(1)+"ById";
+			}
+			tmp.println();
+			var parameters : String := null;
+			if(splitMethodName.size()==3){
+				parameters = "Long id";
+				parameters.println();
+			}	
+			%]
+			
+			 
+			public [%=itr.tipoRetorno%][%=tmp%]([%=parameters%]);
+	[%}%]
+
+	
+}
+

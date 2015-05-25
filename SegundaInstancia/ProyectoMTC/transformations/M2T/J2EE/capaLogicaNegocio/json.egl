@@ -1,0 +1,109 @@
+package json;
+
+import java.util.List;
+
+public class [%=json.nombre%]Json{
+	
+	private Long id;
+	
+	private Long getId(){
+		return id;
+	}
+	
+	public void setId(Long id) {
+		this.id = id;
+	}
+	
+	[%
+	if(json.nombre.contains("Empresa")){%]
+	private Long catalogoId;
+		
+	public Long getCatalogoId() {
+		return catalogoId;
+	}
+
+	public void setCatalogoId(Long catalogoId) {
+		this.catalogoId = catalogoId;
+	}
+		
+	[%}
+	if(json.nombre.contains("Catalogo")){%]
+	private Long empresaId;
+	
+	private List<CategoriaJson> categorias;
+		
+	public Long getEmpresaId() {
+		return empresaId;
+	}
+
+	public void setEmpresaId(Long empresaId) {
+		this.empresaId = empresaId;
+	}
+
+	public List<CategoriaJson> getCategorias() {
+		return categorias;
+	}
+
+	public void setCategorias(List<CategoriaJson> categorias) {
+		this.categorias = categorias;
+	}
+		
+	[%}
+	if(json.nombre.contains("Categoria")){%]
+	private Long catalogoId;
+	
+	private List<ProductoJson> productos;
+	
+	public Long getCatalogoId() {
+		return catalogoId;
+	}
+
+	public void setCatalogoId(Long catalogoId) {
+		this.catalogoId = catalogoId;
+	}
+
+	public List<ProductoJson> getProductos() {
+		return productos;
+	}
+
+	public void setProductos(List<ProductoJson> productos) {
+		this.productos = productos;
+	}
+		
+	[%}
+	if(json.nombre.contains("Producto")){%]
+	private Long categoriaId;
+	
+	public Long getCategoriaId() {
+		return categoriaId;
+	}
+
+	public void setCategoriaId(Long categoriaId) {
+		this.categoriaId = categoriaId;
+	}
+		
+	[%}
+	for(itr in json.atributos){
+	if(not itr.nombre.contains("id")){
+		var tmp : String := itr.nombre;
+		var firstUpper =tmp.substring(0, 1).toUpperCase() + tmp.substring(1);%]
+		private [%=itr.tipoDato%] [%=itr.nombre%];
+	
+		public [%=itr.tipoDato%] get[%=firstUpper%](){
+			return [%=itr.nombre%];
+		}
+		public void set[%=firstUpper%]([%=itr.tipoDato%] [%=itr.nombre%]){
+		this.[%=itr.nombre%] = [%=itr.nombre%];
+		}
+	[%}
+	    
+	
+	
+	
+	
+		
+		
+	}
+	%]
+
+}

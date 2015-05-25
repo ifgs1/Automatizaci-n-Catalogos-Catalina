@@ -1,0 +1,97 @@
+package impl;
+
+import java.util.List;
+
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceContextType;
+
+import entities.Empresa;
+import interfaces.IEmpresaDAO;
+import entities.Catalogo;
+import entities.Categoria;
+import interfaces.ICatalogoDAO;
+import interfaces.ICategoriaDAO;
+import entities.Producto;
+import interfaces.IProductoDAO;
+
+@Stateless
+public class [%=dao.nombre%] implements [%=dao.implementa.nombre%]{
+	
+	@PersistenceContext(unitName = "catalogoPU", type = PersistenceContextType.TRANSACTION)
+    private EntityManager em;
+    
+    [%if(dao.nombre.contains("Empresa")){%]
+    	@SuppressWarnings("unchecked")
+	public List<Empresa> getAllEmpresa() {
+		return em.createNamedQuery("Empresa.findAll")
+				.getResultList();
+	}
+	
+	public Empresa getEmpresa(Long id) {
+		return em.find(Empresa.class, id);
+	}
+   [% }%]
+   
+   [%if(dao.nombre.contains("Catalogo")){%]
+    @SuppressWarnings("unchecked")
+	public List<Catalogo> getAllCatalogo() {
+		List<Catalogo> catalogos = em.createNamedQuery("Catalogo.findAll")
+				.getResultList();
+		for(Catalogo catalogo : catalogos){
+			for(Categoria c:catalogo.getCategorias()){
+				c.setProductos(em.createNamedQuery("Producto.findByCategoria")
+						.setParameter("categoria", c)
+						.getResultList());
+			}
+		}
+		return catalogos;
+	}
+	
+	public Catalogo getCatalogo(Long id) {
+		Catalogo catalogo =  em.find(Catalogo.class, id);
+		for(Categoria c:catalogo.getCategorias()){
+			c.setProductos(em.createNamedQuery("Producto.findByCategoria")
+					.setParameter("categoria", c)
+					.getResultList());
+		}
+		return catalogo;
+	}
+   [% }%]
+   
+   [%if(dao.nombre.contains("Categoria")){%]
+    @SuppressWarnings("unchecked")
+	public List<Categoria> getAllCategoria() {
+		List<Categoria> categorias = em.createNamedQuery("Categoria.findAll")
+				.getResultList();
+		for(Categoria c : categorias){
+			c.setProductos(em.createNamedQuery("Producto.findByCategoria")
+					.setParameter("categoria", c)
+					.getResultList());
+		}
+		return categorias;
+	}
+	
+	public Categoria getCategoria(Long id) {
+		Categoria categoria = em.find(Categoria.class, id);
+		categoria.setProductos(em.createNamedQuery("Producto.findByCategoria")
+					.setParameter("categoria", categoria)
+					.getResultList());
+		return categoria;
+	}
+   [% }%]
+   
+   [%if(dao.nombre.contains("Producto")){%]
+    @SuppressWarnings("unchecked")
+	public List<Producto> getAllProducto() {
+		return em.createNamedQuery("Producto.findAll")
+				.getResultList();
+	}
+	
+	public Producto getProducto(Long id) {
+		return em.find(Producto.class, id);
+	}
+   [% }%]
+    
+    }
