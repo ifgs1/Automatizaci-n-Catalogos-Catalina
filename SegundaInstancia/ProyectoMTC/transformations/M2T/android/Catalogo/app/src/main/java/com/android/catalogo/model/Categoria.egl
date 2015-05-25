@@ -83,7 +83,12 @@ public class [%=entidadCategoria.nombre%] implements Serializable{
             
             [%
 		for(atributo in entidadCategoria.atributos) { %]
-		    	[%=atributo.tipoDato%] categoria_[%=atributo.nombre%] = jsonObjectCategoria.get[%=atributo.tipoDato%]([%=entidadCategoria.nombre.asString().toUpperCase()%]_[%=atributo.nombre.asString().toUpperCase()%]);
+				[%if(atributo.nombre.contains("id")){%]
+					Long categoria_id = jsonObjectCategoria.has(CATEGORIA_ID) ? jsonObjectCategoria.getLong(CATEGORIA_ID) : 0L;	
+				[%}else{%]
+					[%=atributo.tipoDato%] categoria_[%=atributo.nombre%] = jsonObjectCategoria.get[%=atributo.tipoDato%]([%=entidadCategoria.nombre.asString().toUpperCase()%]_[%=atributo.nombre.asString().toUpperCase()%]);		
+				[%}%]
+		    	
 		[%}%]
 
             List<[%=entidadProducto.nombre%]> productoList = new ArrayList<>();

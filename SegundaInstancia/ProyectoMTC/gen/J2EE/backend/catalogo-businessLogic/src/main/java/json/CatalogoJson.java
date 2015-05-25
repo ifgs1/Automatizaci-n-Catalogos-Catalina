@@ -6,7 +6,7 @@ public class CatalogoJson{
 	
 	private Long id;
 	
-	private Long getId(){
+	public Long getId(){
 		return id;
 	}
 	

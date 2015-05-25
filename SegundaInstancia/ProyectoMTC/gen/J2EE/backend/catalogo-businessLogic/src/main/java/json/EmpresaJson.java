@@ -6,7 +6,7 @@ public class EmpresaJson{
 	
 	private Long id;
 	
-	private Long getId(){
+	public Long getId(){
 		return id;
 	}
 	
