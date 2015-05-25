@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <catalogo:RootSistema xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:catalogo="http://www.example.org/catalogo">
-  <empresa nombre="Carulla" direccion="Cra 85 # 15 -56" email="carulla@gmail.com" telefono="4567897" descripcion="Supermercado Mayorista" urlImagen="http://www.revistalabarra.com.co/guia/files/logo/3222.jpg">
+  <empresa nombre="Exito" direccion="Av 68 # 15 -56" email="exito@gmail.com" telefono="4567897" descripcion="Supermercado Mayorista" urlImagen="http://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Almacenes_exito_logo.svg/1028px-Almacenes_exito_logo.svg.png">
     <catalogo idCatalogo="1" nombre="Catalogo de Productos">
       <categorias idCategoria="1" nombre="Comidas">
         <productos idProducto="1" nombre="Jamon Pietran">
@@ -27,12 +27,12 @@
         </productos>
       </categorias>
       <categorias idCategoria="3" nombre="Ropa">
-        <productos idProducto="5" nombre="Ropa Vieja">
+        <productos idProducto="5" nombre="Camiseta Adidas">
           <atributos idAtributo="13" nombreAtributo="precio" valorAtributo="6500" tipoDato="Double"/>
-          <atributos idAtributo="14" nombreAtributo="imagen" valorAtributo="http://paleomg.com/wp-content/uploads/2012/04/ropa-vieja3-300x225.jpg" tipoDato="String"/>
+          <atributos idAtributo="14" nombreAtributo="imagen" valorAtributo="http://www.eblog.com.ar/wp-content/uploads/SelAlemana.jpg" tipoDato="String"/>
           <atributos idAtributo="15" nombreAtributo="promocion" valorAtributo="25%" tipoDato="String"/>
         </productos>
-        <productos idProducto="6" nombre="Adidas Gorra">
+        <productos idProducto="6" nombre="Gorra Nike">
           <atributos idAtributo="16" nombreAtributo="precio" valorAtributo="4000" tipoDato="Double"/>
           <atributos idAtributo="17" nombreAtributo="imagen" valorAtributo="http://images.nike.com/is/image/emea/PDP_HERO/Nike-FC-Block-True-Hat-648344_010_A.jpg" tipoDato="String"/>
           <atributos idAtributo="18" nombreAtributo="promocion" valorAtributo="30%" tipoDato="String"/>

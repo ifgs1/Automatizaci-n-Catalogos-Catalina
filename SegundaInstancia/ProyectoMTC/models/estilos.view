@@ -3,7 +3,7 @@ RootSistema
 	vistas {
 		barraBusqueda  
 		Vista {
-			colorFondo '#DAA536'
+			colorFondo '#FF8800'
 			tecnologia android
 			letra Letra {
 				colorLetra '#3F51B5'
@@ -14,7 +14,7 @@ RootSistema
 		,
 		barraBusqueda
 		Vista {
-			colorFondo '3F51B5'
+			colorFondo '#FF8800'
 			tecnologia iOS
 			letra Letra {
 				colorLetra 'DAA536'
@@ -25,7 +25,7 @@ RootSistema
 		,
 		barraBusqueda
 		Vista {
-			colorFondo '#DAA536'
+			colorFondo '#FF8800'
 			tecnologia web
 			letra Letra {
 				colorLetra '#3F51B5' 

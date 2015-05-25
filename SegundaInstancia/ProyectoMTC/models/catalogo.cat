@@ -1,12 +1,12 @@
 RootSistema {
 	empresa Empresa {
-		nombre Carulla 
-		direccion "Cra 85 # 15 -56" 
-		email "carulla@gmail.com"
+		nombre Exito 
+		direccion "Av 68 # 15 -56" 
+		email "exito@gmail.com"
 		telefono "4567897" 
 		descripcion "Supermercado Mayorista" 
 		urlImagen
-		"http://www.revistalabarra.com.co/guia/files/logo/3222.jpg" 
+		"http://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Almacenes_exito_logo.svg/1028px-Almacenes_exito_logo.svg.png" 
 		catalogo
 		Catalogo {
 			idCatalogo 1 
@@ -136,7 +136,7 @@ RootSistema {
 					productos {
 						Producto {
 							idProducto 5 
-							nombre "Ropa Vieja" 
+							nombre "Camiseta Adidas" 
 							atributos { 
 								Atributo { 
 									idAtributo 13
@@ -148,7 +148,7 @@ RootSistema {
 								Atributo { 
 									idAtributo 14 
 									nombreAtributo 'imagen' 
-									valorAtributo 'http://paleomg.com/wp-content/uploads/2012/04/ropa-vieja3-300x225.jpg' 
+									valorAtributo 'http://www.eblog.com.ar/wp-content/uploads/SelAlemana.jpg' 
 									tipoDato 'String' 
 								}
 								,
@@ -163,7 +163,7 @@ RootSistema {
 						,
 						Producto {
 							idProducto 6 
-							nombre "Adidas Gorra" 
+							nombre "Gorra Nike" 
 							atributos { 
 								Atributo { 
 									idAtributo 16 

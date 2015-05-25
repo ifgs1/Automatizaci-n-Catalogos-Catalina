@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //Navigation bar color
-    [[UINavigationBar appearance] setBarTintColor:[self colorWithHexString:@"3F51B5"]];
+    [[UINavigationBar appearance] setBarTintColor:[self colorWithHexString:@"#FF8800"]];
     
     //all labels properties
     [[UILabel appearance] setFont:[UIFont fontWithName:@"Helvetica" size:13]];
