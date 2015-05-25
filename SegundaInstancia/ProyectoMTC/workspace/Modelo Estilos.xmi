@@ -4,7 +4,7 @@
     <letra colorLetra="#DAA536" fuente="Typeface.NORMAL"/>
   </vistas>
   <vistas colorFondo="#3F51B5" barraBusqueda="true" tecnologia="iOS">
-    <letra colorLetra="#DAA536" fuente="Helvetica" tamano="medium"/>
+    <letra colorLetra="#DAA536" fuente="Helvetica" tamano="large"/>
   </vistas>
   <vistas colorFondo="#414141" barraBusqueda="true" tecnologia="web">
     <letra colorLetra="#FF0000" fuente="Helvetica Neue" tamano="medium"/>

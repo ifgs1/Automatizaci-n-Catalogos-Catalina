@@ -18,7 +18,7 @@ RootSistema
 			letra Letra {
 				colorLetra '#DAA536' 
 				fuente 'Helvetica'
-				tamano medium
+				tamano large
 			}
 		}
 		,

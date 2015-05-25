@@ -48,19 +48,19 @@
   </presentaciones>
   <presentaciones tecnologia="iOS" barraBusqueda="true">
     <vistas colorFondo="#3F51B5" titulo="Categorias">
-      <letra color="#DAA536" fuente="Helvetica" tamano="16"/>
+      <letra color="#DAA536" fuente="Helvetica" tamano="20"/>
     </vistas>
     <vistas colorFondo="#3F51B5" titulo="Productos">
-      <letra color="#DAA536" fuente="Helvetica" tamano="16"/>
+      <letra color="#DAA536" fuente="Helvetica" tamano="20"/>
     </vistas>
     <vistas colorFondo="#3F51B5" titulo="Detalle del Producto">
-      <letra color="#DAA536" fuente="Helvetica" tamano="16"/>
+      <letra color="#DAA536" fuente="Helvetica" tamano="20"/>
     </vistas>
     <vistas colorFondo="#3F51B5" titulo="Contactanos">
-      <letra color="#DAA536" fuente="Helvetica" tamano="16"/>
+      <letra color="#DAA536" fuente="Helvetica" tamano="20"/>
     </vistas>
     <vistas colorFondo="#3F51B5" titulo="Acerca de">
-      <letra color="#DAA536" fuente="Helvetica" tamano="16"/>
+      <letra color="#DAA536" fuente="Helvetica" tamano="20"/>
     </vistas>
     <controladores nombre="ViewController"/>
     <controladores nombre="CategoriasViewController"/>
