@@ -1,0 +1,10 @@
+interfaces\ICatalogo.class
+mapper\ProductoJsonMapper.class
+mapper\CatalogoJsonMapper.class
+json\CategoriaJson.class
+mapper\CategoriaJsonMapper.class
+mapper\EmpresaJsonMapper.class
+impl\CatalogoBean.class
+json\ProductoJson.class
+json\EmpresaJson.class
+json\CatalogoJson.class
