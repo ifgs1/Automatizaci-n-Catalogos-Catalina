@@ -3,8 +3,8 @@
   <vistas colorFondo="#3F51B5">
     <letra colorLetra="#DAA536" fuente="Typeface.NORMAL"/>
   </vistas>
-  <vistas colorFondo="#E75659" barraBusqueda="true" tecnologia="iOS">
-    <letra colorLetra="#FFFFFF" fuente="Helvetica" tamano="medium"/>
+  <vistas colorFondo="#3F51B5" barraBusqueda="true" tecnologia="iOS">
+    <letra colorLetra="#DAA536" fuente="Helvetica" tamano="medium"/>
   </vistas>
   <vistas colorFondo="#414141" barraBusqueda="true" tecnologia="web">
     <letra colorLetra="#FF0000" fuente="Helvetica Neue" tamano="medium"/>

@@ -47,20 +47,20 @@
     </entidades>
   </presentaciones>
   <presentaciones tecnologia="iOS" barraBusqueda="true">
-    <vistas colorFondo="#E75659" titulo="Categorias">
-      <letra color="#FFFFFF" fuente="Helvetica" tamano="16"/>
+    <vistas colorFondo="#3F51B5" titulo="Categorias">
+      <letra color="#DAA536" fuente="Helvetica" tamano="16"/>
     </vistas>
-    <vistas colorFondo="#E75659" titulo="Productos">
-      <letra color="#FFFFFF" fuente="Helvetica" tamano="16"/>
+    <vistas colorFondo="#3F51B5" titulo="Productos">
+      <letra color="#DAA536" fuente="Helvetica" tamano="16"/>
     </vistas>
-    <vistas colorFondo="#E75659" titulo="Detalle del Producto">
-      <letra color="#FFFFFF" fuente="Helvetica" tamano="16"/>
+    <vistas colorFondo="#3F51B5" titulo="Detalle del Producto">
+      <letra color="#DAA536" fuente="Helvetica" tamano="16"/>
     </vistas>
-    <vistas colorFondo="#E75659" titulo="Contactanos">
-      <letra color="#FFFFFF" fuente="Helvetica" tamano="16"/>
+    <vistas colorFondo="#3F51B5" titulo="Contactanos">
+      <letra color="#DAA536" fuente="Helvetica" tamano="16"/>
     </vistas>
-    <vistas colorFondo="#E75659" titulo="Acerca de">
-      <letra color="#FFFFFF" fuente="Helvetica" tamano="16"/>
+    <vistas colorFondo="#3F51B5" titulo="Acerca de">
+      <letra color="#DAA536" fuente="Helvetica" tamano="16"/>
     </vistas>
     <controladores nombre="ViewController"/>
     <controladores nombre="CategoriasViewController"/>
