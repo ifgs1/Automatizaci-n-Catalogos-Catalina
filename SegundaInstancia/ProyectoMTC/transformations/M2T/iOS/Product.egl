@@ -1,0 +1,20 @@
+[%
+var list : arquitectura!CapaPresentacion := arquitectura!CapaPresentacion.all.select(a | a.tecnologia=arquitectura!Tecnologia#iOS).at(0).println();
+ var Producto = list.entidades.select(e|e.nombre='Producto').at(0);
+ %]
+//
+//  Product.h
+//  Catalogo
+//
+//  Created by Ivan F Garcia S on 4/29/15.
+//  Copyright (c) 2015 Ivan F Garcia S. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface Product : NSObject
+ [%  for (atributo in Producto.atributos){ %]
+  @property (nonatomic, retain) NSString * [%= atributo.nombre%];
+ 
+[% } %]
+@end

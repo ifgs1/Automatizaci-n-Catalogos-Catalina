@@ -1,0 +1,75 @@
+[%
+var list : arquitectura!CapaPresentacion := arquitectura!CapaPresentacion.all.select(a | a.tecnologia=arquitectura!Tecnologia#iOS).at(0).println();
+ var Producto = list.entidades.select(e|e.nombre='Producto').at(0);
+ %]
+//
+//  DescriptionViewController.m
+//  Catalogo
+//
+//  Created by Ivan F Garcia S on 5/21/15.
+//  Copyright (c) 2015 Ivan F Garcia S. All rights reserved.
+//
+
+#import "DescriptionViewController.h"
+
+@interface DescriptionViewController ()
+
+@end
+
+@implementation DescriptionViewController
+
+-(void)setProduct:(Product *)product{
+    if (_myProduct != product) {
+        _myProduct = product;
+        
+        [self configureView];
+    }
+
+}
+- (void)configureView
+{
+    
+    if (self.myProduct) {
+        
+    }
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self loadProductDescription];
+    // Do any additional setup after loading the view.
+}
+-(void)loadProductDescription{
+        [% for (atributo in Producto.atributos){ %]
+             [%  if(atributo.nombre.equals('imagen') or atributo.nombre.equals('urlImagen')){%]
+ 			   NSURL * imageURL = [NSURL URLWithString:self.myProduct.[%= atributo.nombre%]];
+ 			   NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
+   			   UIImage * image = [UIImage imageWithData:imageData];
+   			   self.imgProduct.image = image;
+           [% } %]
+             [% else {%]
+                self.lblProductDescription.text = [self.lblProductDescription.text stringByAppendingString:[NSString stringWithFormat:@"%@%@\n",@"[%= atributo.nombre%]: ",self.myProduct.[%= atributo.nombre%]]];
+             [%} %]
+		[% } %]
+}
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+- (IBAction)close:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+
+}
+@end
