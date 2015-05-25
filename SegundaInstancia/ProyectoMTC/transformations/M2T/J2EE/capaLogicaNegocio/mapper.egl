@@ -25,6 +25,7 @@ public class [%=mapper.nombre%] {
 		var split = tmp2.split(" ");
 		var firstLower =tmp.substring(0, 1).toLowerCase() + tmp.substring(1);%]
 			[%=itr.tipoRetorno%] [%=firstLower%] = new [%=itr.tipoRetorno%]();
+			[%=firstLower%].setId([%=split.at(1)%].getId()); 
 			
 		[%
 		returnName = firstLower;
