@@ -3,34 +3,34 @@ RootSistema
 	vistas {
 		barraBusqueda  
 		Vista {
-			colorFondo '#669900'
+			colorFondo '#CC0000'
 			tecnologia android
 			letra Letra {
 				colorLetra '#000000'
 				fuente 'Typeface.NORMAL'
-				tamano small
+				tamano large
 			}
 		}
 		,
 		barraBusqueda
 		Vista {
-			colorFondo '669900'
+			colorFondo 'CC0000'
 			tecnologia iOS
 			letra Letra {
 				colorLetra '000000'
 				fuente 'Helvetica'
-				tamano small
+				tamano large
 			}
 		}
 		,
 		barraBusqueda
 		Vista {
-			colorFondo '#669900'
+			colorFondo '#CC0000'
 			tecnologia web
 			letra Letra {
 				colorLetra  '#000000'
 				fuente 'Helvetica Neue'
-				tamano medium
+				tamano large
 			}
 		}	
 	} 

@@ -43,6 +43,7 @@
  			   NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
    			   UIImage * image = [UIImage imageWithData:imageData];
    			   self.imgProduct.image = image;
+                self.lblProductDescription.text = [self.lblProductDescription.text stringByAppendingString:[NSString stringWithFormat:@"%@%@\n",@"cantidad: ",self.myProduct.cantidad]];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
